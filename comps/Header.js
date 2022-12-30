@@ -32,6 +32,7 @@ const Header = () => {
           <li>
             <Link
               className={styles.link}
+              target="_blank"
               href="https://drive.google.com/file/d/172MpnWJfhW2-HhCeJCiNzruKlJKZPsCB/view?usp=sharing"
             >
               Resume
@@ -57,6 +58,7 @@ const Header = () => {
       <div className={styles.links}>
         <Link
           className={styles.link}
+          target="_blank"
           href="https://drive.google.com/file/d/172MpnWJfhW2-HhCeJCiNzruKlJKZPsCB/view?usp=sharing"
         >
           Resume
