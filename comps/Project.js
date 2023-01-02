@@ -23,6 +23,15 @@ const Project = () => {
         bg="white"
       />
       <Proj
+        src="/job-listings.jpg"
+        name="Job Listings with Filtering"
+        desc="A website with filtering that uses JSON data fetching to dynamically render the job cards."
+        code="https://github.com/victoribironke/job-listings"
+        site="https://techjoblistings.netlify.app/"
+        stack="Next.js|CSS"
+        bg="hsl(180, 52%, 96%)"
+      />
+      <Proj
         src="/advice-app.jpg"
         name="Advice Generator App"
         desc="A website that gives you random nuggets of advice using the Advice Slip API."
