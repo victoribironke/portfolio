@@ -32,6 +32,15 @@ const Project = () => {
         bg="hsl(180, 52%, 96%)"
       />
       <Proj
+        src="/countries-api.jpg"
+        name="REST Countries API App"
+        desc="A website that uses the REST Countries API to render innformation about the countries in the world."
+        code="https://github.com/victoribironke/rest-countries-api-app"
+        site="https://countriesarchive.netlify.app/"
+        stack="Next.js|CSS|Countries API"
+        bg="hsl(207, 26%, 17%)"
+      />
+      <Proj
         src="/advice-app.jpg"
         name="Advice Generator App"
         desc="A website that gives you random nuggets of advice using the Advice Slip API."
@@ -39,15 +48,6 @@ const Project = () => {
         site="https://victoribironke.github.io/advice-generator-app/"
         stack="HTML|CSS|JavaScript|Advice Slip API"
         bg="hsl(218, 23%, 16%)"
-      />
-      <Proj
-        src="/tip-calculator.jpg"
-        name="Tip Calculator App"
-        desc="A tip calculator for calculating the amount each person will pay in tips and total."
-        code="https://github.com/vdiqbd/tip-calculator"
-        site="https://victoribironke.github.io/tip-calculator/"
-        stack="HTML|CSS|JavaScript"
-        bg="hsl(185, 41%, 84%)"
       />
       <Proj
         src="/multi-step-form.jpg"
