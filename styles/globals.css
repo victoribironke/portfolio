@@ -17,6 +17,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+  transition: all 0.2s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
@@ -56,36 +58,15 @@ body {
   align-items: center;
 }
 
-.link {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 25px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 120px;
-  height: auto;
+#hide {
+  display: none;
 }
 
-.link img {
-  width: 30px;
-  aspect-ratio: 1/1;
-}
-
-.socials {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 30px 30px 0;
-  gap: 50px;
-}
-
-.socials img {
-  width: 35px;
-  height: auto;
+.projects {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 20px 0 5px;
+  margin-bottom: 30px;
+  border-bottom: 5px solid var(--red);
 }

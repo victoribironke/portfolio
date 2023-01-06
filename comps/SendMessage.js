@@ -1,15 +1,10 @@
 import styles from "../styles/SendMessage.module.css";
 import { useRef } from "react";
 
-const SendMessage = (props) => {
-  let cls;
-  let cls2;
+const SendMessage = () => {
   const name = useRef(null);
   const email = useRef(null);
   const message = useRef(null);
-
-  props.location == "home" ? (cls = styles.wrapper) : (cls = styles.wrapper2);
-  props.location == "home" ? (cls2 = "") : (cls2 = styles.contact);
 
   const sendMessage = () => {
     const nme = name.current;
@@ -35,11 +30,11 @@ const SendMessage = (props) => {
   };
 
   return (
-    <div className={cls}>
+    <div className={styles.wrapper}>
       <p className={styles.text}>Send me a message</p>
       <div className={styles.inputWrapper}>
         <input
-          className={`${styles.name} ${cls2}`}
+          className={styles.name}
           id="name"
           type="text"
           ref={name}
@@ -47,7 +42,7 @@ const SendMessage = (props) => {
           name="name"
         />
         <input
-          className={`${styles.email} ${cls2}`}
+          className={styles.email}
           type="email"
           ref={email}
           placeholder="Your email (to contact you)"
@@ -55,7 +50,7 @@ const SendMessage = (props) => {
         />
       </div>
       <textarea
-        className={`${styles.textarea} ${cls2}`}
+        className={styles.textarea}
         name="message"
         ref={message}
         placeholder="Message"

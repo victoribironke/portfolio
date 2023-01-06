@@ -32,13 +32,12 @@
 }
 
 .up {
-  font-size: 35px;
+  font-size: 30px;
   color: var(--white);
   font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
   border-bottom: 5px solid var(--red);
-  /* border-top: 5px solid var(--red); */
   padding: 5px 0 5px 0;
 }
 

@@ -1,7 +1,5 @@
-.wrapper,
-.wrapper2 {
+.wrapper {
   width: 100%;
-  /* max-width: 900px; */
   height: auto;
   display: flex;
   align-items: center;
@@ -11,12 +9,8 @@
   padding: 30px 15px;
 }
 
-.wrapper2 {
-  background: var(--black);
-}
-
 .text {
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--white);
   margin-bottom: 30px;
@@ -78,10 +72,6 @@
   border: 3px solid var(--black);
 }
 
-.contact {
-  border: 3px solid var(--lighter-black);
-}
-
 .button {
   width: 45%;
   max-width: 200px;
@@ -93,7 +83,6 @@
   border-radius: 5px;
   font-size: 23px;
   font-weight: 700;
-  /* box-shadow: -6px -4px 40px 2px #0ff; */
 }
 
 .button:hover {
