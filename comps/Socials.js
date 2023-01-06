@@ -41,7 +41,7 @@ const Socials = () => {
       />
       <Social
         src="/resume.png"
-        to="https://drive.google.com/file/d/172MpnWJfhW2-HhCeJCiNzruKlJKZPsCB/view?usp=sharing"
+        to="https://drive.google.com/file/d/12vnDoX1l2_JbSIX6PMBFt_a7_COPt-Ya/view?usp=sharing"
         alt="Resume"
       />
     </div>
