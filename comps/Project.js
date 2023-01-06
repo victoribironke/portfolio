@@ -41,6 +41,15 @@ const Project = () => {
         bg="hsl(207, 26%, 17%)"
       />
       <Proj
+        src="/rps-game.jpg"
+        name="RPS"
+        desc="A Rock Paper Scissors Game."
+        code="https://github.com/victoribironke/rock-paper-scissors-game"
+        site="https://nextjsrpsgame.netlify.app/"
+        stack="Next.js|CSS"
+        bg="hsl(237, 49%, 15%)"
+      />
+      <Proj
         src="/advice-app.jpg"
         name="Advice Generator App"
         desc="A website that gives you random nuggets of advice using the Advice Slip API."
