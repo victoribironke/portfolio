@@ -8,40 +8,42 @@ const Socials = () => {
         src="/instagram.svg"
         to="https://www.instagram.com/victor.ibironke_"
         alt="instagram"
+        title="Instagram"
       />
       <Social
         src="/twitter.svg"
         to="https://www.twitter.com/victoribironke_"
+        title="Twitter"
         alt="twitter"
       />
       <Social
         src="/facebook.svg"
         to="https://www.facebook.com/victor.ibironke.963"
+        title="Facebook"
         alt="facebook"
       />
       <Social
         src="/linkedin.svg"
         to="https://www.linkedin.com/in/victor-ibironke"
         alt="linkedin"
+        title="LinkedIn"
       />
       <Social
         src="/github.svg"
         to="https://www.github.com/victoribironke"
         alt="github"
-      />
-      <Social
-        src="/tiktok.svg"
-        to="https://www.tiktok.com/@vdiqbd"
-        alt="tiktok"
+        title="GitHub"
       />
       <Social
         src="/coffee.png"
         to="https://www.buymeacoffee.com/victoribironke"
         alt="buymeacoffee"
+        title="Buy Me A Coffee"
       />
       <Social
         src="/resume.png"
-        to="https://drive.google.com/file/d/12vnDoX1l2_JbSIX6PMBFt_a7_COPt-Ya/view?usp=sharing"
+        title="Download Resume"
+        to="/victoribironke-resume.pdf"
         alt="Resume"
       />
     </div>
@@ -51,7 +53,7 @@ const Socials = () => {
 const Social = (props) => {
   return (
     <Link target="_blank" className={styles.social} href={props.to}>
-      <img src={props.src} alt={props.alt} />
+      <img src={props.src} title={props.title} alt={props.alt} />
     </Link>
   );
 };
