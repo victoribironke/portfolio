@@ -22,26 +22,35 @@ const Home = () => {
         />
         <script src="https://smtpjs.com/v3/smtp.js"></script>
       </Head>
-      <Header />
-      <About />
-      <p className="projects">Projects</p>
-      <Project />
-      <p className="projects">Technologies</p>
-      <Techs />
-      <SendMessage />
-      <Socials />
-      <Footer />
-      <div id="hide">
-        <a href="https://icons8.com/icon/8443/coffee-to-go">Coffee to Go</a>
-        <a href="https://icons8.com">Icons8</a>
-        <a href="https://icons8.com/icon/kg46nzoJrmTR/express-js">Express Js</a>
-        <a href="https://icons8.com">Icons8</a>
-        <a target="_blank" href="https://icons8.com/icon/39372/cv">
-          CV
-        </a>
-        <a target="_blank" href="https://icons8.com">
-          Icons8
-        </a>
+      <div
+        className="
+    left"
+      >
+        <Header />
+        <About />
+      </div>
+      <div className="right">
+        <p className="projects">Projects</p>
+        <Project />
+        <p className="projects">Technologies</p>
+        <Techs />
+        <SendMessage />
+        <Socials />
+        <Footer />
+        <div id="hide">
+          <a href="https://icons8.com/icon/8443/coffee-to-go">Coffee to Go</a>
+          <a href="https://icons8.com">Icons8</a>
+          <a href="https://icons8.com/icon/kg46nzoJrmTR/express-js">
+            Express Js
+          </a>
+          <a href="https://icons8.com">Icons8</a>
+          <a target="_blank" href="https://icons8.com/icon/39372/cv">
+            CV
+          </a>
+          <a target="_blank" href="https://icons8.com">
+            Icons8
+          </a>
+        </div>
       </div>
     </>
   );

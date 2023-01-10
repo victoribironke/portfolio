@@ -38,6 +38,9 @@ body {
   width: 100%;
   min-height: 100vh;
   background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #__next {
@@ -47,6 +50,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* background: green; */
+  /* max-width: 1500px; */
 }
 
 .header {
@@ -62,9 +67,22 @@ body {
   display: none;
 }
 
+.left,
+.right {
+  width: 100%;
+  /* background: blue; */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .projects {
+  max-width: 500px;
   color: white;
   font-size: 30px;
+  text-align: center;
   font-weight: 600;
   padding: 20px 0 5px;
   margin-bottom: 30px;

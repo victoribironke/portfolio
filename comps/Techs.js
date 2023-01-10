@@ -18,7 +18,7 @@ const Techs = () => {
       <p className={styles.skill} title="NextJS">
         <img src="/next-js.svg" alt="nextjs" />
       </p>
-      <p className={styles.skill} title="NodeJs">
+      <p className={styles.skill} title="NodeJS">
         <img src="/node-js.svg" alt="nodejs" />
       </p>
       <p className={styles.skill} title="ExpressJS">
