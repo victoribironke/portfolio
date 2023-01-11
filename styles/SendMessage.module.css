@@ -49,7 +49,7 @@
 .textarea:focus,
 .contact:hover,
 .contact:focus {
-  border: 3px solid var(--red);
+  border: 3px solid var(--blue);
 }
 
 .name {
@@ -78,7 +78,7 @@
   height: 50px;
   border: none;
   cursor: pointer;
-  background: var(--red);
+  background: var(--blue);
   color: var(--white);
   border-radius: 5px;
   font-size: 23px;
@@ -86,5 +86,5 @@
 }
 
 .button:hover {
-  background: var(--light-red);
+  background: var(--dark-blue);
 }

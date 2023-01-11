@@ -16,7 +16,7 @@
   height: auto;
   gap: 15px;
   background: var(--light-black);
-  padding-bottom: 20px;
+  padding: 25px 0;
   border-radius: 5px;
   position: relative;
 }
@@ -25,7 +25,6 @@
   font-size: 25px;
   padding: 0 20px;
   color: var(--white);
-  margin: 10px 0 0;
 }
 
 .links {
@@ -44,7 +43,7 @@
   border-radius: 10px;
   font-size: 16px;
   display: flex;
-  gap: 6px;
+  gap: 10px;
 }
 
 .site {
@@ -62,7 +61,7 @@
 
 .site:hover,
 .code:hover {
-  color: var(--red);
+  color: var(--blue);
 }
 
 .stack {
@@ -75,5 +74,5 @@
 
 .tech {
   display: inline;
-  color: var(--red);
+  color: var(--blue);
 }

@@ -7,8 +7,13 @@ import Script from "next/script";
 import Techs from "../comps/Techs";
 import Project from "../comps/Project";
 import Socials from "../comps/Socials";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    setTimeout(() => document.querySelector("body").classList.add("load"), 200);
+  });
+
   return (
     <>
       <Head>

@@ -5,6 +5,12 @@ const Project = () => {
   return (
     <div className={styles.wrapper}>
       <Proj
+        name="My Age Progress (Twitter Bot)"
+        code="https://github.com/victoribironke/age-progress"
+        site="https://victoribironke.github.io/age-progress/"
+        stack="HTML|CSS|JavaScript|Python"
+      />
+      <Proj
         name="URL Shortener App"
         code="https://github.com/victoribironke/url-shortener-app"
         site="https://shortener-app.netlify.app/"
