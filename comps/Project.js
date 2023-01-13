@@ -41,6 +41,12 @@ const Project = () => {
         stack="Next.js|CSS"
       />
       <Proj
+        name="Password Generator"
+        code="https://github.com/victoribironke/password-generator/tree/master"
+        site="https://victoribironke.github.io/password-generator/"
+        stack="HTML|CSS|JavaScript"
+      />
+      <Proj
         name="Advice Generator App"
         code="https://github.com/victoribironke/advice-generator-app"
         site="https://victoribironke.github.io/advice-generator-app/"
