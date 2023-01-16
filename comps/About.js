@@ -36,7 +36,7 @@ const About = () => {
         <p className={styles.up}>Full Stack Developer</p>
         <p className={styles.down}>
           I am a full stack web developer from Nigeria. I have been making
-          websites for over 3 years. I use HTML, CSS and JavaScript, but I am
+          websites for over 2 years. I use HTML, CSS and JavaScript, but I am
           currently focused on React JS, Next JS, Node JS and Express JS.
         </p>
       </div>
