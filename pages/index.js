@@ -1,11 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
+import Script from "next/script";
 import About from "../comps/About";
 import Header from "../comps/Header";
 import SendMessage from "../comps/SendMessage";
 import Footer from "../comps/Footer";
-import Script from "next/script";
 import Techs from "../comps/Techs";
-import Project from "../comps/Project";
+import Projects from "../comps/Projects";
 import Socials from "../comps/Socials";
 import { useEffect } from "react";
 
@@ -27,16 +28,16 @@ const Home = () => {
         />
         <script src="https://smtpjs.com/v3/smtp.js"></script>
       </Head>
-      <div
-        className="
-    left"
-      >
+      <div className="left">
         <Header />
         <About />
       </div>
       <div className="right">
         <p className="projects">Projects</p>
-        <Project />
+        <Projects />
+        <Link href={"/projects"} className="moreProjects">
+          <p>More Projects</p>
+        </Link>
         <p className="projects">Technologies</p>
         <Techs />
         <SendMessage />

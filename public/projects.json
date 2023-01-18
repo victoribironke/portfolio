@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "My Age Progress (Twitter Bot)",
+    "code": "https://github.com/victoribironke/age-progress",
+    "site": "https://victoribironke.github.io/age-progress/",
+    "stack": "HTML|CSS|JavaScript|Python"
+  },
+  {
+    "id": 2,
+    "name": "URL Shortener App",
+    "code": "https://github.com/victoribironke/url-shortener-app",
+    "site": "https://shortener-app.netlify.app/",
+    "stack": "Next.js|CSS|Shrtcode API"
+  },
+  {
+    "id": 3,
+    "name": "eCommerce Product Page",
+    "code": "https://github.com/victoribironke/ecommerce-product-page",
+    "site": "https://sneakerss-page.netlify.app/",
+    "stack": "Next.js|CSS"
+  },
+  {
+    "id": 4,
+    "name": "Countries Archive",
+    "code": "https://github.com/victoribironke/rest-countries-api-app",
+    "site": "https://countriesarchive.netlify.app/",
+    "stack": "Next.js|CSS|Countries API"
+  },
+  {
+    "id": 5,
+    "name": "Job Listings with Filtering",
+    "code": "https://github.com/victoribironke/job-listings",
+    "site": "https://techjoblistings.netlify.app/",
+    "stack": "Next.js|CSS"
+  },
+  {
+    "id": 6,
+    "name": "Rock Paper Scissors Game",
+    "code": "https://github.com/victoribironke/rock-paper-scissors-game",
+    "site": "https://nextjsrpsgame.netlify.app/",
+    "stack": "Next.js|CSS"
+  },
+  {
+    "id": 7,
+    "name": "Password Generator",
+    "code": "https://github.com/victoribironke/password-generator/tree/master",
+    "site": "https://victoribironke.github.io/password-generator/",
+    "stack": "HTML|CSS|JavaScript"
+  },
+  {
+    "id": 8,
+    "name": "Advice Generator App",
+    "code": "https://github.com/victoribironke/advice-generator-app",
+    "site": "https://victoribironke.github.io/advice-generator-app/",
+    "stack": "HTML|CSS|JavaScript|Advice Slip API"
+  },
+  {
+    "id": 9,
+    "name": "Multi-step form",
+    "code": "https://github.com/victoribironke/multi-step-form",
+    "site": "https://victoribironke.github.io/multi-step-form/",
+    "stack": "HTML|CSS|JavaScript"
+  },
+  {
+    "id": 10,
+    "name": "Interactive Card Details Form",
+    "code": "https://github.com/victoribironke/interactive-card-details-form",
+    "site": "https://carddetailsform.netlify.app/",
+    "stack": "Next.js|CSS"
+  }
+]
