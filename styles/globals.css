@@ -41,7 +41,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* filter: blur(10px); */
+  filter: blur(10px);
 }
 
 .load {

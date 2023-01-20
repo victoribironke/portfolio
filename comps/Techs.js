@@ -12,6 +12,9 @@ const Techs = () => {
       <p className={styles.skill} title="JavaScript">
         <img src="/js.svg" alt="js" />
       </p>
+      <p className={styles.skill} title="TypeScript">
+        <img src="/typescript.svg" alt="js" />
+      </p>
       <p className={styles.skill} title="ReactJS">
         <img src="/react.svg" alt="react" />
       </p>

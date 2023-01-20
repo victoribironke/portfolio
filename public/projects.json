@@ -68,5 +68,12 @@
     "code": "https://github.com/victoribironke/interactive-card-details-form",
     "site": "https://carddetailsform.netlify.app/",
     "stack": "Next.js|CSS"
+  },
+  {
+    "id": 11,
+    "name": "Interactive Pricing Component",
+    "code": "https://github.com/victoribironke/interactive-pricing-component",
+    "site": "https://victoribironke.github.io/interactive-pricing-component/",
+    "stack": "HTML|CSS|TypeScript"
   }
 ]
