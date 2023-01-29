@@ -75,5 +75,12 @@
     "code": "https://github.com/victoribironke/interactive-pricing-component",
     "site": "https://victoribironke.github.io/interactive-pricing-component/",
     "stack": "HTML|CSS|TypeScript"
+  },
+  {
+    "id": 12,
+    "name": "Todo App",
+    "code": "https://github.com/victoribironke/todo-app/tree/master",
+    "site": "https://victoribironke.github.io/todo-app/",
+    "stack": "HTML|CSS|TypeScript"
   }
 ]

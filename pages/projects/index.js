@@ -40,6 +40,7 @@ const Projects = () => {
             code={proj.code}
             site={proj.site}
             stack={proj.stack}
+            key={proj.id}
           />
         ))}
       </div>

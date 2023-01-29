@@ -41,12 +41,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: blur(10px);
+  /* filter: blur(10px); */
 }
 
-.load {
+/* .load {
   filter: none;
-}
+} */
 
 #__next {
   width: 100%;

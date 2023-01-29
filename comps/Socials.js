@@ -34,6 +34,12 @@ const Socials = () => {
       title: "Github",
     },
     {
+      src: "/hashnode.svg",
+      to: "https://victoribironke.hashnode.dev/",
+      alt: "hashnode",
+      title: "Hashnode",
+    },
+    {
       src: "/coffee.png",
       to: "https://www.buymeacoffee.com/victoribironke",
       alt: "buymeacoffee",
