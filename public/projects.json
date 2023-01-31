@@ -82,5 +82,12 @@
     "code": "https://github.com/victoribironke/todo-app/tree/master",
     "site": "https://victoribironke.github.io/todo-app/",
     "stack": "HTML|CSS|TypeScript"
+  },
+  {
+    "id": 13,
+    "name": "Musical Notes Trainer",
+    "code": "https://github.com/victoribironke/musical-notes-trainer",
+    "site": "https://victoribironke.github.io/musical-notes-trainer/",
+    "stack": "HTML|CSS|JavaScript"
   }
 ]
