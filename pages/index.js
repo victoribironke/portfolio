@@ -11,10 +11,6 @@ import Socials from "../comps/Socials";
 import { useEffect } from "react";
 
 const Home = () => {
-  useEffect(() => {
-    setTimeout(() => document.querySelector("body").classList.add("load"), 200);
-  });
-
   return (
     <>
       <Head>

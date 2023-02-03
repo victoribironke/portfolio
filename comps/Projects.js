@@ -41,7 +41,9 @@ const Proj = (props) => {
       <p className={styles.name}>{props.name}</p>
       <div className={styles.stack}>
         {stack.map((tch) => (
-          <p className={styles.tech}>{tch}</p>
+          <p key={stack.indexOf(tch)} className={styles.tech}>
+            {tch}
+          </p>
         ))}
       </div>
       <div className={styles.links}>

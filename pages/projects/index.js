@@ -7,14 +7,12 @@ import { Proj } from "../../comps/Projects";
 const Projects = () => {
   const [projectsObject, setProjectsObject] = useState([]);
   useEffect(() => {
-    document.querySelector("body").classList.remove("load");
     fetch("/projects.json")
       .then((res) => res.json())
       .then((data) => {
         setProjectsObject(data);
       })
       .catch((err) => console.error(err));
-    setTimeout(() => document.querySelector("body").classList.add("load"), 200);
   });
 
   return (

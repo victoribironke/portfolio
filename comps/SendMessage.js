@@ -10,7 +10,7 @@ const SendMessage = () => {
     const nme = name.current;
     const eml = email.current;
     const msg = message.current;
-
+    console.log(env);
     if (nme.value == "" || eml.value == "" || msg.value == "") {
       alert("Please completely fill out the fields.");
     } else {
