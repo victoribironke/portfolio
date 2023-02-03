@@ -33,11 +33,11 @@ const About = () => {
         />
       </div>
       <div className={styles.description}>
-        <p className={styles.up}>Full Stack Developer</p>
+        <p className={styles.up}>Software Engineer</p>
         <p className={styles.down}>
-          I am a full stack web developer from Nigeria. I have been making
-          websites for over 2 years. I use HTML, CSS and JavaScript, but I am
-          currently focused on React JS, Next JS, Node JS and Express JS.
+          I am a Software Engineer from Nigeria. I have been making websites for
+          over 2 years. I use HTML, CSS and JavaScript, but I am currently
+          focused on React JS, Next JS, Node JS and Express JS.
         </p>
       </div>
     </div>
