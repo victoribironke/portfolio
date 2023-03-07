@@ -36,7 +36,7 @@ const About = () => {
         <p className={styles.up}>Software Engineer</p>
         <p className={styles.down}>
           I am a software engineer from Nigeria. I have been making websites for
-          over 2 years. I use HTML, CSS and JavaScript, but I am currently
+          over 3 years. I use HTML, CSS and JavaScript, but I am currently
           focused on React JS, Next JS, Node JS and Express JS.
         </p>
       </div>
