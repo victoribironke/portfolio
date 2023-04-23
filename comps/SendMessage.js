@@ -10,14 +10,13 @@ const SendMessage = () => {
     const nme = name.current;
     const eml = email.current;
     const msg = message.current;
-    console.log(env);
     if (nme.value == "" || eml.value == "" || msg.value == "") {
       alert("Please completely fill out the fields.");
     } else {
       Email.send({
         Host: "smtp.elasticemail.com",
-        Username: "ibikidsfc56@gmail.com",
-        Password: "F9C7D0EA9FD5302C6BBE629C98348D5A1A36",
+        Username: "boyvictor@proton.me",
+        Password: "5219D605DE3788B50B98E9E321046F56502D",
         To: "victoribironke2019@gmail.com",
         From: "ibikidsfc56@gmail.com",
         Subject: "New Message From Your Portfolio",
