@@ -3,6 +3,7 @@ import { FaTwitter } from "react-icons/fa";
 import { ImLinkedin } from "react-icons/im";
 import { BsGithub } from "react-icons/bs";
 import Link from "next/link";
+import Image from "next/image";
 
 const About = () => {
   const linkClassname =
@@ -10,14 +11,16 @@ const About = () => {
 
   return (
     <section className="w-full max-w-xl flex flex-col rs:flex-row gap-4 items-center justify-center mb-16">
-      <img
+      <Image
         src={profilePic}
         alt="profile-image"
-        className="w-24 h-24 rounded-full border-[3px] border-blue"
+        className="rounded-full border-[3px] border-blue"
+        width={96}
+        height={96}
       />
       <div className="w-full flex flex-col gap-5 rs:gap-3">
         <p className="font-magnat font-normal text-xl text-center rs:text-left">
-          Hey, I'm Victor.{" "}
+          Hey, I am Victor.{" "}
           <span className="opacity-70">
             I am a software engineer and full stack developer.
           </span>
