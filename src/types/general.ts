@@ -1,9 +1,6 @@
-export type AnchorProps = {
-  to: string;
-  text: string;
-};
-
-export type StyledTextProps = {
-  text: string;
-  className: string;
+export type ProjectProps = {
+  name: string;
+  startDate: string;
+  url: string;
+  desc: string;
 };

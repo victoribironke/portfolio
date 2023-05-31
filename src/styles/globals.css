@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .project-bg {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,12 +22,13 @@
 #__next {
   background: black;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
   color: white;
+  gap: 2rem;
 }
 
 html::-webkit-scrollbar {
@@ -33,32 +44,8 @@ html::-webkit-scrollbar-track {
   background: transparent;
 }
 
-@media (width > 450px) {
+@media (width >= 450px) {
   #__next {
-    padding: 2rem;
-  }
-}
-
-@media (width > 640px) {
-  #__next {
-    padding: 2.5rem 5rem;
-  }
-}
-
-@media (width > 768px) {
-  #__next {
-    padding: 3rem 8rem;
-  }
-}
-
-@media (width > 1024px) {
-  #__next {
-    padding: 3rem 11rem;
-  }
-}
-
-@media (width > 1280px) {
-  #__next {
-    padding: 3rem 15rem;
+    padding-top: 4rem;
   }
 }

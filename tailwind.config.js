@@ -13,7 +13,7 @@ module.exports = {
         "2xl": "1450px",
       },
       fontFamily: {
-        play: ["var(--font-playfair)"],
+        magnat: ["var(--font-magnat)"],
       },
       colors: {
         gray: "#999",
