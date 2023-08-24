@@ -8,7 +8,7 @@ const Footer = () => {
   const linkClassname = "text-lg rs:text-xl cursor-pointer hover:scale-105";
 
   return (
-    <footer className="w-full max-w-xl flex flex-col items-center justify-center rs:flex-row rs:justify-between gap-6">
+    <footer className="w-full max-w-xl flex flex-col items-center justify-center rs:flex-row rs:justify-between gap-6 mb-6">
       <div className="font-magnat font-medium rs:text-lg mr-auto w-full text-center rs:text-left">
         VICTOR IBIRONKE
       </div>
