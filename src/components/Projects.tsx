@@ -9,10 +9,10 @@ const projects: ProjectProps[] = [
     desc: "Stylistic is an AI-powered outfit picker app. It helps you figure out what to wear anytime you need it by analyzing your existing wardrobe, the weather and the occasion.",
   },
   {
-    name: "Todo App",
-    startDate: "January 21, 2023",
-    url: "https://victoribironke.github.io/todo-app/",
-    desc: "This is a basic todo app created with HTML, CSS and TypeScript. It has all the basic features of a standard todo app, including filtering and a theme switcher.",
+    name: "Ted-Ed Summarized",
+    startDate: "August 23, 2023",
+    url: "https://ted-ed-summarized.vercel.app",
+    desc: "This is a website to keep track of the generated summaries of Ted-Ed videos on twitter.",
   },
 ];
 
