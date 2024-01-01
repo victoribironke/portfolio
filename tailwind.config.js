@@ -12,9 +12,6 @@ module.exports = {
         rs: "450px",
         "2xl": "1450px",
       },
-      fontFamily: {
-        magnat: ["var(--font-magnat)"],
-      },
       colors: {
         gray: "#999",
         blue: "#1f8fff",

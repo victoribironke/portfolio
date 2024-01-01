@@ -19,7 +19,7 @@ const projects: ProjectProps[] = [
 const Projects = () => {
   return (
     <section className="mb-16 w-full max-w-xl flex flex-col gap-6">
-      <h1 className="font-magnat font-medium text-xl w-full text-center rs:text-left">
+      <h1 className="font-medium text-xl w-full text-center rs:text-left">
         What I have been working on
       </h1>
 

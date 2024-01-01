@@ -7,19 +7,19 @@ import Image from "next/image";
 
 const About = () => {
   const linkClassname =
-    "flex items-center justify-center gap-2 font-magnat font-light cursor-pointer hover:scale-105";
+    "flex items-center justify-center gap-2 font-light cursor-pointer hover:scale-105";
 
   return (
     <section className="w-full max-w-xl flex flex-col rs:flex-row gap-4 items-center justify-center mb-16">
       <Image
         src={profilePic}
         alt="profile-image"
-        className="rounded-full border-[3px] border-blue"
+        className="rounded-xl border-[3px] border-blue"
         width={96}
         height={96}
       />
       <div className="w-full flex flex-col gap-5 rs:gap-3">
-        <p className="font-magnat font-normal text-xl text-center rs:text-left">
+        <p className="font-normal text-xl text-center rs:text-left">
           Hey, I am Victor.{" "}
           <span className="opacity-70">
             I am a software engineer and full stack developer.

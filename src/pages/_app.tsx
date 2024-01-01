@@ -29,13 +29,12 @@ const magnat = localFont({
       weight: "200",
     },
   ],
-  variable: "--font-magnat",
 });
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <main
-      className={`${magnat.variable} flex items-center justify-center flex-col w-full font-play`}
+      className={`${magnat.className} flex items-center justify-center flex-col w-full font-play`}
     >
       <Component {...pageProps} />
     </main>

@@ -26,10 +26,10 @@ const Header = () => {
 
   return (
     <header className="w-full flex items-center justify-between max-w-xl mb-16 gap-4">
-      <h1 className="font-magnat font-medium text-lg rs:text-xl mr-auto">
+      <h1 className="font-medium text-lg rs:text-xl mr-auto">
         VICTOR IBIRONKE
       </h1>
-      <p className="font-magnat opacity-75 text-sm">
+      <p className="opacity-75 text-sm">
         {time.hour}:{time.minutes}:{time.seconds} {time.am_pm}
       </p>
     </header>
