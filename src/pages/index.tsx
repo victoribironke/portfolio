@@ -31,7 +31,7 @@ const Home = () => {
         <link rel="icon" href={src} type="image/x-icon" />
         <meta
           name="description"
-          content="victor ibironke is a full stack developer with an ethusiastic drive for building high-quality web projects."
+          content="Victor Ibironke is a full stack developer with an ethusiastic drive for building high-quality web projects."
         />
 
         {/* <!-- Facebook Meta Tags --> */}
@@ -43,7 +43,7 @@ const Home = () => {
         />
         <meta
           property="og:description"
-          content="victor ibironke is a full stack developer with an ethusiastic drive for building high-quality web projects."
+          content="Victor Ibironke is a full stack developer with an ethusiastic drive for building high-quality web projects."
         />
         <meta
           property="og:image"
@@ -59,7 +59,7 @@ const Home = () => {
         />
         <meta
           name="twitter:description"
-          content="victor ibironke is a full stack developer with an ethusiastic drive for building high-quality web projects."
+          content="Victor Ibironke is a full stack developer with an ethusiastic drive for building high-quality web projects."
         />
         <meta
           name="twitter:image"
