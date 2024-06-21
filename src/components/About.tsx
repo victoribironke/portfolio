@@ -1,57 +1,25 @@
-import { profilePic } from "@/helpers/image-paths";
-import { FaTwitter } from "react-icons/fa";
-import { ImLinkedin } from "react-icons/im";
-import { BsGithub } from "react-icons/bs";
-import Link from "next/link";
-import Image from "next/image";
+import HeroSvg from "./HeroSvg";
 
 const About = () => {
-  const linkClassname =
-    "flex items-center justify-center gap-2 font-magnat font-light cursor-pointer hover:scale-105";
-
   return (
-    <section className="w-full max-w-xl flex flex-col rs:flex-row gap-4 items-center justify-center mb-16">
-      <Image
-        src={profilePic}
-        alt="profile-image"
-        className="rounded-full border-[3px] border-blue"
-        width={96}
-        height={96}
-      />
-      <div className="w-full flex flex-col gap-5 rs:gap-3">
-        <p className="font-magnat font-normal text-xl text-center rs:text-left">
-          Hey, I am Victor.{" "}
-          <span className="opacity-70">
-            I am a software engineer and full stack developer.
-          </span>
+    <section className="w-full mt-44 max-w-5xl relative flex gap-4 items-center bg-gray-100 bg-opacity-5 p-6 backdrop-blur-sm rounded-2xl">
+      <p className="w-fit max-w-5xl text-left font-mono text-blue bg-gray-100 bg-opacity-5 px-6 py-2 self-start backdrop-blur-sm rounded-xl absolute -top-12 left-0 z-0">
+        about
+      </p>
+
+      <div className="flex flex-col h-full gap-8">
+        <p className="text-xl max-w-xl md:max-w-2xl z-10">
+          hello! i am Victor Ibironke
         </p>
 
-        <div className="flex flex-wrap items-center justify-center rs:justify-start gap-4">
-          <Link
-            href="https://twitter.com/victoribironke_"
-            className={linkClassname}
-            target="_blank"
-          >
-            <FaTwitter />
-            Twitter
-          </Link>
-          <Link
-            href="https://linkedin.com/in/victor-ibironke"
-            className={linkClassname}
-            target="_blank"
-          >
-            <ImLinkedin />
-            LinkedIn
-          </Link>
-          <Link
-            href="https://github.com/victoribironke"
-            className={linkClassname}
-            target="_blank"
-          >
-            <BsGithub />
-            Github
-          </Link>
-        </div>
+        <p className="text-3xl md:text-4xl max-w-2xl z-10">
+          i am a full stack developer with an ethusiastic drive for building
+          high-quality web projects.
+        </p>
+      </div>
+
+      <div className="absolute w-full md:w-[50%] right-0 overflow-hidden h-full rounded-2xl">
+        <HeroSvg />
       </div>
     </section>
   );

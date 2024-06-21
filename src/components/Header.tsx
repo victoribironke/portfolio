@@ -1,7 +1,11 @@
-import { formatTime } from "@/helpers/utils";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { useRecoilValue } from "recoil";
+import { imageSrc } from "@/atoms/atoms";
+import { cn, formatTime } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
-const Header = () => {
+const Header = ({ className }: { className: string }) => {
+  const src = useRecoilValue(imageSrc);
   const [time, setTime] = useState({
     hour: "00",
     minutes: "00",
@@ -25,13 +29,34 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="w-full flex items-center justify-between max-w-xl mb-16 gap-4">
-      <h1 className="font-magnat font-medium text-lg rs:text-xl mr-auto">
-        VICTOR IBIRONKE
-      </h1>
-      <p className="font-magnat opacity-75 text-sm">
-        {time.hour}:{time.minutes}:{time.seconds} {time.am_pm}
-      </p>
+    <header
+      className={cn(
+        "w-full border-b text-white border-zinc-700 z-10 backdrop-blur-xl fixed flex items-center justify-center",
+        className
+      )}
+    >
+      <div className="w-full max-w-5xl py-4 px-6 flex items-center justify-center gap-8">
+        <Avatar className="mr-auto">
+          <AvatarImage src={src} />
+          <AvatarFallback className="text-black">VI</AvatarFallback>
+        </Avatar>
+
+        {/* <Link href="#about" className="hover:text-blue">
+          about
+        </Link>
+
+        <Link href="#work" className="hover:text-blue">
+          work
+        </Link>
+
+        <Link href="#contact" className="hover:text-blue">
+          contact
+        </Link> */}
+
+        <p>
+          {time.hour}:{time.minutes}:{time.seconds} {time.am_pm}
+        </p>
+      </div>
     </header>
   );
 };
