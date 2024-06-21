@@ -2,28 +2,28 @@ const WorkExperience = () => {
   const experience = [
     {
       company: "Merjoh LTD",
-      title: "website developer",
+      title: "Website developer",
       start_date: "2023-03-01",
       end_date: "2023-07-31",
-      desc: "i was tasked with using wordpress to build and manage websites for various clients.",
+      desc: "I was tasked with using wordpress to build and manage websites for various clients.",
       image: "/merjoh-logo.jpeg",
       url: "https://merjoh.com/",
     },
     {
       company: "AfternoonPrep",
-      title: "frontend developer",
+      title: "Frontend developer",
       start_date: "2023-04-01",
       end_date: "2023-07-31",
-      desc: "i was the second dev tasked with building out and maintaining the UI of the company's web app.",
+      desc: "I was the second dev tasked with building out and maintaining the UI of the company's web app.",
       image: "/afternoon-prep-logo.png",
       url: "https://afternoonprep.com/",
     },
     {
       company: "Talanq",
-      title: "full stack developer",
+      title: "Full stack developer",
       start_date: "2023-11-01",
       end_date: "2024-06-30",
-      desc: "i was tasked with rebuilding the company's website from scratch, complete with a web app and backend functions.",
+      desc: "I was tasked with rebuilding the company's website from scratch, complete with a web app and backend functions.",
       image: "/talanq-logo.png",
       url: "https://talanq.com/",
     },
@@ -36,8 +36,16 @@ const WorkExperience = () => {
       </p>
 
       {experience.map((e, i) => {
-        const start_date = new Date(e.start_date).toDateString();
-        const end_date = new Date(e.end_date).toDateString();
+        const start_date = new Date(e.start_date)
+          .toDateString()
+          .split(" ")
+          .slice(1)
+          .join(" ");
+        const end_date = new Date(e.end_date)
+          .toDateString()
+          .split(" ")
+          .slice(1)
+          .join(" ");
 
         return (
           <div

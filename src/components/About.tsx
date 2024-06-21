@@ -9,11 +9,11 @@ const About = () => {
 
       <div className="flex flex-col h-full gap-8">
         <p className="text-xl max-w-xl md:max-w-2xl z-10">
-          hello! i am Victor Ibironke
+          Hello! I am Victor Ibironke
         </p>
 
         <p className="text-3xl md:text-4xl max-w-2xl z-10">
-          i am a full stack developer with an ethusiastic drive for building
+          I am a full stack developer with an ethusiastic drive for building
           high-quality web projects.
         </p>
       </div>

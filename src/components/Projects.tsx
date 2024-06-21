@@ -8,31 +8,31 @@ const Projects = () => {
 
   const projects = [
     {
-      name: "babcock tools",
+      name: "Babcock Tools",
       urls: {
         github: "https://github.com/victoribironke/babcock-tools",
         live: "https://babcock.tools/",
         image: "https://www.babcock.tools/images/logo.jpeg",
       },
-      desc: "suite of tools for babcock university students",
+      desc: "A suite of tools for babcock university students",
     },
     {
-      name: "github user search",
+      name: "Github user search",
       urls: {
         github: "https://github.com/victoribironke/github-user-search",
         live: "https://userlookup.netlify.app/",
         image: "https://userlookup.netlify.app/icon-github.svg",
       },
-      desc: "simple github user search app",
+      desc: "A simple github user search app",
     },
     {
-      name: "profile picture automation",
+      name: "Profile picture automation",
       urls: {
         github: "https://github.com/victoribironke/pp-automation/",
         live: "https://profile-picture-automation.vercel.app/",
         image: src,
       },
-      desc: "script for changing my twitter profile picture",
+      desc: "A script to change my twitter profile picture automatically",
     },
   ];
 
@@ -66,7 +66,7 @@ const Projects = () => {
               className="w-full flex gap-2 rounded-md bg-gray-100 bg-opacity-5 p-3 backdrop-blur-sm border border-transparent hover:border-zinc-700"
             >
               <Github />
-              github
+              Github
             </Link>
 
             <Link
@@ -75,7 +75,7 @@ const Projects = () => {
               className="w-full flex gap-2 rounded-md bg-gray-100 bg-opacity-5 p-3 backdrop-blur-sm border border-transparent hover:border-zinc-700"
             >
               <ExternalLink />
-              live
+              Live URL
             </Link>
           </div>
         </div>

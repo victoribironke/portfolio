@@ -3,19 +3,19 @@ import Link from "next/link";
 
 const Contact = () => {
   const footerLinks = [
-    { text: "github", icon: Github, url: "https://github.com/victoribironke" },
+    { text: "Github", icon: Github, url: "https://github.com/victoribironke" },
     {
-      text: "linkedin",
+      text: "Linkedin",
       icon: LinkedIn,
       url: "https://linkedin.com/in/victor-ibironke",
     },
     {
-      text: "twitter",
+      text: "Twitter",
       icon: Twitter,
       url: "https://twitter.com/victoribironke_",
     },
     {
-      text: "instagram",
+      text: "Instagram",
       icon: Instagram,
       url: "https://instagram.com/victor.ibironke_",
     },
@@ -28,11 +28,11 @@ const Contact = () => {
       </p>
       <div className="w-full lg:w-3/5 bg-gray-100 bg-opacity-5 p-6 backdrop-blur-sm rounded-2xl flex flex-col gap-4">
         <p className="text-xl max-w-xl md:max-w-2xl z-10">
-          want to get in touch?
+          Want to get in touch?
         </p>
 
         <p className="text-lg md:text-xl max-w-2xl z-10">
-          shoot me an email @{" "}
+          Shoot me an email @{" "}
           <Link
             href="mailto:victoribironke2019@gmail.com"
             className="text-blue"
