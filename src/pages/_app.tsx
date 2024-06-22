@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Bricolage_Grotesque } from "next/font/google";
 import { RecoilRoot } from "recoil";
+import { Analytics } from "@vercel/analytics/react";
 
 const bg = Bricolage_Grotesque({ subsets: ["latin"], display: "swap" });
 
@@ -17,6 +18,7 @@ const bg = Bricolage_Grotesque({ subsets: ["latin"], display: "swap" });
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <RecoilRoot>
+      <Analytics />
       <Header className={bg.className} />
       <main
         className={cn(
