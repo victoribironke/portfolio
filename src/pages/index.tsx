@@ -13,13 +13,11 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      const url = `https://profile-picture-automation.vercel.app/api/get-latest-image-seed?password=${process.env.NEXT_PUBLIC_PASSWORD}`;
+      const url = `https://profile-picture-automation.vercel.app/api/get-latest-image?password=${process.env.NEXT_PUBLIC_PASSWORD}`;
 
       const res = await (await fetch(url)).json();
 
-      setSrc(
-        `https://api.dicebear.com/8.x/lorelei/svg?seed=${res.data.seed}&flip=true`
-      );
+      setSrc(res.data);
     })();
   }, []);
 
