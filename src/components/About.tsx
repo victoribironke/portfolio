@@ -13,7 +13,7 @@ const About = () => {
         </p>
 
         <p className="text-3xl md:text-4xl max-w-2xl z-10">
-          I am a full stack developer with an enthusiastic drive for building
+          I am a full-stack developer with an enthusiastic drive for building
           high-quality web projects.
         </p>
       </div>

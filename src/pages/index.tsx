@@ -24,12 +24,12 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Victor Ibironke ~ full stack developer</title>
+        <title>Victor Ibironke ~ full-stack developer</title>
         <link rel="shortcut-icon" href={src} type="image/x-icon" />
         <link rel="icon" href={src} type="image/x-icon" />
         <meta
           name="description"
-          content="Victor Ibironke is a full stack developer with an enthusiastic drive for building high-quality web projects."
+          content="Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects."
         />
 
         {/* <!-- Facebook Meta Tags --> */}
@@ -37,11 +37,11 @@ const Home = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Victor Ibironke ~ full stack developer"
+          content="Victor Ibironke ~ full-stack developer"
         />
         <meta
           property="og:description"
-          content="Victor Ibironke is a full stack developer with an enthusiastic drive for building high-quality web projects."
+          content="Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects."
         />
         <meta
           property="og:image"
@@ -53,11 +53,11 @@ const Home = () => {
         <meta property="twitter:url" content="https://www.victoribironke.com" />
         <meta
           name="twitter:title"
-          content="Victor Ibironke ~ full stack developer"
+          content="Victor Ibironke ~ full-stack developer"
         />
         <meta
           name="twitter:description"
-          content="Victor Ibironke is a full stack developer with an enthusiastic drive for building high-quality web projects."
+          content="Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects."
         />
         <meta
           name="twitter:image"
