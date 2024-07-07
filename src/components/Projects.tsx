@@ -17,6 +17,15 @@ const Projects = () => {
       desc: "A suite of tools for babcock university students",
     },
     {
+      name: "FPL statistics",
+      urls: {
+        github: "https://github.com/victoribironke/fpl-stats",
+        live: "https://fpl-statistics.vercel.app/",
+        image: "https://fpl-statistics.vercel.app/logo.png",
+      },
+      desc: "A tool for gettinng insights on your FPL team",
+    },
+    {
       name: "Github user search",
       urls: {
         github: "https://github.com/victoribironke/github-user-search",
