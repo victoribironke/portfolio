@@ -22,7 +22,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="w-full text-white mb-20 max-w-5xl relative flex flex-col lg:flex-row gap-4 justify-center">
+    <section className="w-full text-white mb-14 max-w-5xl relative flex flex-col lg:flex-row gap-4 justify-center">
       <p className="w-fit max-w-5xl text-left font-mono text-blue bg-gray-100 bg-opacity-5 px-6 py-2 self-start backdrop-blur-sm rounded-xl absolute -top-12 left-0 z-0">
         contact
       </p>
