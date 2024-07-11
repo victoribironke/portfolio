@@ -23,7 +23,7 @@ const Projects = () => {
         live: "https://fpl-statistics.vercel.app/",
         image: "https://fpl-statistics.vercel.app/logo.png",
       },
-      desc: "A tool for gettinng insights on your FPL team",
+      desc: "A tool for getting insights on your FPL team",
     },
     {
       name: "Github user search",
