@@ -17,6 +17,15 @@ const Projects = () => {
       desc: "A suite of tools for babcock university students",
     },
     {
+      name: "Ventivo",
+      urls: {
+        github: "",
+        live: "https://ventivo.co/",
+        image: "https://www.ventivo.co/logo-transparent.png",
+      },
+      desc: "A tool for generating real-time charts around your Firebase data",
+    },
+    {
       name: "FPL statistics",
       urls: {
         github: "https://github.com/victoribironke/fpl-stats",
