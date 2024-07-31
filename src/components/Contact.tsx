@@ -34,7 +34,7 @@ const Contact = () => {
 
         <div className="w-full md:w-[50%] flex items-center gap-6 z-10">
           <Link
-            href="mailto:hello@victoribironke.com"
+            href="mailto:victoribironke2019@gmail.com"
             target="_blank"
             className="text-blue border-b border-blue hover:px-1"
           >
