@@ -43,15 +43,15 @@ const Projects = () => {
       },
       desc: "A simple github user search app",
     },
-    {
-      name: "Profile picture automation",
-      urls: {
-        github: "https://github.com/victoribironke/pp-automation/",
-        live: "https://profile-picture-automation.vercel.app/",
-        image: src,
-      },
-      desc: "A script to change my twitter profile picture automatically",
-    },
+    // {
+    //   name: "Profile picture automation",
+    //   urls: {
+    //     github: "https://github.com/victoribironke/pp-automation/",
+    //     live: "https://profile-picture-automation.vercel.app/",
+    //     image: src,
+    //   },
+    //   desc: "A script to change my twitter profile picture automatically",
+    // },
   ];
 
   return (
