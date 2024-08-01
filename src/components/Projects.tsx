@@ -1,11 +1,7 @@
-import { imageSrc } from "@/atoms/atoms";
 import Link from "next/link";
-import { useRecoilValue } from "recoil";
 import { ExternalLink, Github } from "./FooterIcons";
 
 const Projects = () => {
-  const src = useRecoilValue(imageSrc);
-
   const projects = [
     {
       name: "Babcock Tools",
