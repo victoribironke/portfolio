@@ -3,11 +3,12 @@ import Header from "@/components/Header";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Bricolage_Grotesque, Inter, Oswald } from "next/font/google";
 import { RecoilRoot } from "recoil";
 import { Analytics } from "@vercel/analytics/react";
 
-const bg = Bricolage_Grotesque({ subsets: ["latin"], display: "swap" });
+const os = Oswald({ subsets: ["latin"], display: "swap" });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 // export const getStaticProps = async () => {
 //   return {
@@ -19,16 +20,16 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <RecoilRoot>
       <Analytics />
-      <Header className={bg.className} />
+      <Header className={os.className} />
       <main
         className={cn(
-          "flex min-h-screen flex-col items-center bg-black text-white px-6 gap-28",
-          bg.className
+          "flex min-h-screen flex-col items-center text-white px-6 gap-28",
+          os.className
         )}
       >
         <Component {...pageProps} />
       </main>
-      <Footer className={bg.className} />
+      <Footer className={os.className} />
     </RecoilRoot>
   );
 };
