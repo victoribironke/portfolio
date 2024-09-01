@@ -79,10 +79,6 @@
   transition: all 200ms ease-in-out;
 }
 
-#__next {
-  background-color: black;
-}
-
 html {
   scroll-behavior: smooth;
 

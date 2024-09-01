@@ -3,8 +3,8 @@ import HeroSvg from "./HeroSvg";
 const About = () => {
   return (
     <section className="w-full mt-52 max-w-5xl sticky flex gap-4 items-center bg-gray-100 bg-opacity-5 p-6 backdrop-blur-sm rounded-2xl">
-      <p className="w-fit max-w-5xl text-left font-mono text-blue bg-gray-100 bg-opacity-5 px-6 py-2 self-start backdrop-blur-sm rounded-xl absolute -top-12 left-0 z-0">
-        about
+      <p className="w-fit max-w-5xl text-left font-sub text-blue bg-gray-100 bg-opacity-5 px-6 py-2 self-start backdrop-blur-sm rounded-xl absolute -top-12 left-0 z-0">
+        abouty
       </p>
 
       <div className="flex flex-col h-full gap-8">

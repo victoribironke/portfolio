@@ -1,35 +1,41 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Bricolage_Grotesque, Inter, Oswald } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import { RecoilRoot } from "recoil";
 import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 
-const os = Oswald({ subsets: ["latin"], display: "swap" });
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const main = Oswald({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-main",
+});
+const sub = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sub",
+});
 
-// export const getStaticProps = async () => {
-//   return {
-//     props: {},
-//   };
-// };
+const name = "Victor"; // unused variable to break a new deployment
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <RecoilRoot>
       <Analytics />
-      <Header className={os.className} />
+      <Head>
+        <title>Victor Ibironke</title>
+      </Head>
+
       <main
         className={cn(
-          "flex min-h-screen flex-col items-center text-white px-6 gap-28",
-          os.className
+          "flex w-full min-h-screen flex-col items-center",
+          main.variable,
+          sub.variable
         )}
       >
         <Component {...pageProps} />
       </main>
-      <Footer className={os.className} />
     </RecoilRoot>
   );
 };

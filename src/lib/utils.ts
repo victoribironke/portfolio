@@ -16,3 +16,5 @@ export const getGitHubYears = (joinYear: number) => {
 export const formatTime = (t: number): string => {
   return t < 10 ? `0${t}` : `${t}`;
 };
+
+export const addRefToUrl = (url: string) => url + "?ref=victoribironke.com";

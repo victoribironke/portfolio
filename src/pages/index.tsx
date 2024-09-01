@@ -1,75 +1,35 @@
-import { imageSrc } from "@/atoms/atoms";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import ContributionGraph from "@/components/ContributionGraph";
+import Footer from "@/components/general/Footer";
+import HeaderAndHero from "@/components/general/HeaderAndHero";
+import HeadTemplate from "@/components/general/HeadTemplate";
 import Projects from "@/components/Projects";
 import WorkExperience from "@/components/WorkExperience";
-import Head from "next/head";
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { IMAGES } from "@/constants/constants";
 
 const Home = () => {
-  const [src, setSrc] = useRecoilState(imageSrc);
-
-  useEffect(() => {
-    (async () => {
-      const url = `https://profile-picture-automation.vercel.app/api/get-latest-image?password=${process.env.NEXT_PUBLIC_PASSWORD}`;
-
-      const res = await (await fetch(url)).json();
-
-      setSrc(res.data);
-    })();
-  }, []);
+  const meta = {
+    title: "Victor Ibironke",
+    description:
+      "Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects.",
+    url: "https://www.victoribironke.com",
+    og_image: "https://www.victoribironke.com/og-image.png",
+    logo: IMAGES.logo.src,
+  };
 
   return (
     <>
-      <Head>
-        <title>Victor Ibironke ~ full-stack developer</title>
-        <link rel="shortcut-icon" href={src} type="image/x-icon" />
-        <link rel="icon" href={src} type="image/x-icon" />
-        <meta
-          name="description"
-          content="Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects."
-        />
+      <HeadTemplate meta={meta} />
 
-        {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://www.victoribironke.com" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Victor Ibironke ~ full-stack developer"
-        />
-        <meta
-          property="og:description"
-          content="Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects."
-        />
-        <meta
-          property="og:image"
-          content="https://www.victoribironke.com/og-image.png"
-        />
-        {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="www.victoribironke.com" />
-        <meta property="twitter:url" content="https://www.victoribironke.com" />
-        <meta
-          name="twitter:title"
-          content="Victor Ibironke ~ full-stack developer"
-        />
-        <meta
-          name="twitter:description"
-          content="Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.victoribironke.com/og-image.png"
-        />
-      </Head>
+      <HeaderAndHero />
 
-      <About />
+      <Footer />
+      {/* <About />
       <WorkExperience />
       <Projects />
       <ContributionGraph />
-      <Contact />
+      <Contact /> */}
     </>
   );
 };
