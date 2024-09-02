@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { ExternalLink, Github } from "./FooterIcons";
+import { IMAGES } from "@/constants/constants";
+import { Button } from "./ui/button";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const Projects = () => {
   const projects = [
@@ -8,92 +11,80 @@ const Projects = () => {
       urls: {
         github: "https://github.com/victoribironke/babcock-tools",
         live: "https://babcock.tools/",
-        image: "https://www.babcock.tools/images/logo.jpeg",
+        image: IMAGES.project.babcock_tools.src,
       },
-      desc: "A suite of tools for babcock university students",
+      desc: "This is a suite of tools for the students of Babcock University.",
     },
     {
       name: "Ventivo",
       urls: {
         github: "",
         live: "https://ventivo.co/",
-        image: "https://www.ventivo.co/logo-transparent.png",
+        image: IMAGES.project.ventivo.src,
       },
-      desc: "A tool for generating real-time charts around your Firebase data",
+      desc: "This is a tool for generating real-time charts around your Firebase data.",
     },
     {
       name: "FPL statistics",
       urls: {
         github: "https://github.com/victoribironke/fpl-stats",
         live: "https://fpl-statistics.vercel.app/",
-        image: "https://fpl-statistics.vercel.app/logo.png",
+        image: IMAGES.project.fpl_stats.src,
       },
-      desc: "A tool for getting insights on your FPL team",
+      desc: "This is a tool that wraps around the fantasy premier league API and displays statistics and insights on your team.",
     },
     {
       name: "Github user search",
       urls: {
         github: "https://github.com/victoribironke/github-user-search",
         live: "https://userlookup.netlify.app/",
-        image: "https://userlookup.netlify.app/icon-github.svg",
+        image: IMAGES.project.github_user_search.src,
       },
-      desc: "A simple github user search app",
+      desc: "This is a simple website that allows you to get the information of any user on GitHub.",
     },
-    // {
-    //   name: "Profile picture automation",
-    //   urls: {
-    //     github: "https://github.com/victoribironke/pp-automation/",
-    //     live: "https://profile-picture-automation.vercel.app/",
-    //     image: src,
-    //   },
-    //   desc: "A script to change my twitter profile picture automatically",
-    // },
   ];
 
   return (
-    <section className="w-full text-white max-w-5xl relative gap-4 justify-center grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1">
-      <p className="w-fit max-w-5xl text-left font-mono text-blue bg-gray-100 bg-opacity-5 px-6 py-2 self-start backdrop-blur-sm rounded-xl absolute -top-12 left-0 z-0">
-        projects
+    <section className="w-full max-w-5xl gap-20 flex flex-col items-center justify-center pt-40 px-6">
+      <p className="font-main text-4xl md:text-5xl lg:text-7xl text-center w-full">
+        PROJECTS
       </p>
 
-      {projects.map((p, i) => (
-        <div
-          key={i}
-          className="flex items-center justify-center flex-col gap-y-4 bg-gray-100 bg-opacity-5 backdrop-blur-sm p-4 rounded-2xl"
-        >
-          <div className="w-full flex items-center gap-x-4">
-            <img
-              src={p.urls.image}
-              alt={p.name}
-              className="bg-gray-100 bg-opacity-5 backdrop-blur-sm rounded-md p-2 w-14 h-14"
-            />
-            <div>
-              <h2 className="font-semibold mb-1">{p.name}</h2>
-              <div className="text-sm text-zinc-400">{p.desc}</div>
+      <div className="w-full gap-12 flex items-center justify-center flex-col">
+        {projects.map((p, i) => (
+          <div
+            key={i}
+            className={cn(
+              "flex items-center justify-center gap-4 md:gap-12 w-full flex-col",
+              i % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
+            )}
+          >
+            <div className="flex items-start justify-center self-start flex-col w-full md:w-1/2 gap-4">
+              <p className="font-sub text-2xl md:text-3xl lg:text-4xl font-bold">
+                {p.name}
+              </p>
+              <p className="font-sub md:text-lg lg:text-xl">{p.desc}</p>
+
+              <Link
+                href=""
+                className="text-blue lg:text-lg font-sub border-b border-blue pb-1 hover:pb-1.5"
+              >
+                Read more
+              </Link>
+            </div>
+
+            <div className="flex items-start justify-center flex-col w-full md:w-1/2 border-2 rounded-2xl overflow-hidden">
+              <Image
+                alt={p.name}
+                src={p.urls.image}
+                height={878}
+                width={1561}
+                className="hover:scale-125"
+              />
             </div>
           </div>
-
-          <div className="w-full flex gap-x-4 items-center justify-center">
-            <Link
-              href={p.urls.github}
-              target="_blank"
-              className="w-full flex gap-2 rounded-md bg-gray-100 bg-opacity-5 p-3 backdrop-blur-sm border border-transparent hover:border-zinc-700"
-            >
-              <Github />
-              Github
-            </Link>
-
-            <Link
-              href={p.urls.live}
-              target="_blank"
-              className="w-full flex gap-2 rounded-md bg-gray-100 bg-opacity-5 p-3 backdrop-blur-sm border border-transparent hover:border-zinc-700"
-            >
-              <ExternalLink />
-              Live URL
-            </Link>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };

@@ -1,24 +1,33 @@
 import {
   BiLinkExternal,
-  BiLogoCodepen,
   BiLogoDevTo,
-  BiLogoDribbble,
   BiLogoGithub,
-  BiLogoGitlab,
   BiLogoInstagram,
   BiLogoLinkedinSquare,
-  BiLogoStackOverflow,
-  BiLogoSteam,
-  BiLogoUnsplash,
-  BiLogoYoutube,
 } from "react-icons/bi";
-import { FaFreeCodeCamp, FaProductHunt } from "react-icons/fa";
-import { SiCodewars } from "react-icons/si";
-import { FaHashnode, FaHashtag, FaSquareXTwitter } from "react-icons/fa6";
+import { FaProductHunt } from "react-icons/fa";
+import { FaHashnode, FaSquareXTwitter } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 
 export const IMAGES = {
-  logo: { src: "/logo.png", h: 600, w: 600 },
+  logo: { src: "/logo.png", w: 600, h: 600 },
+
+  project: {
+    github_user_search: {
+      src: "/project-github-user-search.png",
+      w: 1561,
+      h: 878,
+    },
+    babcock_tools: { src: "/project-babcock-tools.png", w: 1561, h: 878 },
+    fpl_stats: { src: "/project-fpl-stats.png", w: 1561, h: 878 },
+    ventivo: { src: "/project-ventivo.png", w: 1561, h: 878 },
+  },
+
+  company: {
+    talanq: { src: "/company-talanq.png", w: 1561, h: 878 },
+    afternoonprep: { src: "/company-afternoonprep.png", w: 1561, h: 878 },
+    merjoh: { src: "/company-merjoh.png", w: 1561, h: 878 },
+  },
 };
 
 export const FOOTER_LINKS = [

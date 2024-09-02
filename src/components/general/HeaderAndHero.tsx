@@ -1,31 +1,23 @@
-import { formatTime } from "@/lib/utils";
-import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { IMAGES } from "@/constants/constants";
 
 const HeaderAndHero = () => {
-  const [time, setTime] = useState({
-    hour: "00",
-    minutes: "00",
-    seconds: "00",
-    am_pm: "AM",
-  });
-
-  setInterval(() => {
-    const date = new Date(new Date().toLocaleString("en-US"));
-
-    const hh = date.getHours();
-    const hour = formatTime(hh > 12 ? hh - 12 : hh);
-    const minutes = formatTime(date.getMinutes());
-    const seconds = formatTime(date.getSeconds());
-
-    const am_pm = hh >= 12 ? "PM" : "AM";
-
-    setTime({ hour, minutes, seconds, am_pm });
-  }, 1000);
-
   return (
-    <section className="bg-black w-full min-h-[50vh] md:min-h-screen flex items-center justify-center flex-col gap-8 relative">
-      <div className="w-full px-4 absolute top-10 text-center font-sub text-white">
-        {time.hour}:{time.minutes}:{time.seconds} {time.am_pm}
+    <section className="bg-black px-6 w-full min-h-[50vh] md:min-h-screen flex items-center justify-center flex-col gap-8">
+      <div className="w-full font-sub text-white flex items-center justify-center gap-4">
+        <Avatar>
+          <AvatarImage src={IMAGES.logo.src} alt="@victoribironke" />
+          <AvatarFallback>VI</AvatarFallback>
+        </Avatar>
+
+        <Link
+          href="mailto:hello@victoribironke.com"
+          className="border-b pb-1 hover:pb-1.5"
+        >
+          hello@victoribironke.com
+        </Link>
       </div>
 
       <p className="text-white font-main text-5xl md:text-6xl lg:text-8xl text-center w-full">

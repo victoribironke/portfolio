@@ -1,6 +1,3 @@
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import ContributionGraph from "@/components/ContributionGraph";
 import Footer from "@/components/general/Footer";
 import HeaderAndHero from "@/components/general/HeaderAndHero";
 import HeadTemplate from "@/components/general/HeadTemplate";
@@ -24,12 +21,10 @@ const Home = () => {
 
       <HeaderAndHero />
 
-      <Footer />
-      {/* <About />
-      <WorkExperience />
       <Projects />
-      <ContributionGraph />
-      <Contact /> */}
+      <WorkExperience />
+
+      <Footer />
     </>
   );
 };
