@@ -11,7 +11,7 @@ const Home = () => {
     description:
       "Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects.",
     url: "https://www.victoribironke.com",
-    og_image: "https://www.victoribironke.com/og-image.png",
+    og_image: IMAGES.seo.home.src,
     logo: IMAGES.logo.src,
   };
 
@@ -19,7 +19,7 @@ const Home = () => {
     <>
       <HeadTemplate meta={meta} />
 
-      <HeaderAndHero />
+      <HeaderAndHero desc="Full stack developer" title="Victor Ibironke" />
 
       <Projects />
       <WorkExperience />

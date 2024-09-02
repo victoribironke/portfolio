@@ -1,49 +1,10 @@
 import Link from "next/link";
-import { IMAGES } from "@/constants/constants";
+import { PROJECTS } from "@/constants/constants";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const Projects = () => {
-  const projects = [
-    {
-      name: "Babcock Tools",
-      urls: {
-        github: "https://github.com/victoribironke/babcock-tools",
-        live: "https://babcock.tools/",
-        image: IMAGES.project.babcock_tools.src,
-      },
-      desc: "This is a suite of tools for the students of Babcock University.",
-    },
-    {
-      name: "Ventivo",
-      urls: {
-        github: "",
-        live: "https://ventivo.co/",
-        image: IMAGES.project.ventivo.src,
-      },
-      desc: "This is a tool for generating real-time charts around your Firebase data.",
-    },
-    {
-      name: "FPL statistics",
-      urls: {
-        github: "https://github.com/victoribironke/fpl-stats",
-        live: "https://fpl-statistics.vercel.app/",
-        image: IMAGES.project.fpl_stats.src,
-      },
-      desc: "This is a tool that wraps around the fantasy premier league API and displays statistics and insights on your team.",
-    },
-    {
-      name: "Github user search",
-      urls: {
-        github: "https://github.com/victoribironke/github-user-search",
-        live: "https://userlookup.netlify.app/",
-        image: IMAGES.project.github_user_search.src,
-      },
-      desc: "This is a simple website that allows you to get the information of any user on GitHub.",
-    },
-  ];
-
   return (
     <section className="w-full max-w-5xl gap-20 flex flex-col items-center justify-center pt-40 px-6">
       <p className="font-main text-4xl md:text-5xl lg:text-7xl text-center w-full">
@@ -51,7 +12,7 @@ const Projects = () => {
       </p>
 
       <div className="w-full gap-12 flex items-center justify-center flex-col">
-        {projects.map((p, i) => (
+        {PROJECTS.map((p, i) => (
           <div
             key={i}
             className={cn(
