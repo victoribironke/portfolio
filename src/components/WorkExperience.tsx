@@ -71,8 +71,12 @@ const WorkExperience = () => {
                 </p>
                 <p className="font-sub md:text-lg lg:text-xl">{e.desc}</p>
 
-                <Link href={e.url} target="_blank">
-                  <Button className="text-white font-sub bg-black hover:bg-black/90">
+                <Link
+                  href={e.url}
+                  target="_blank"
+                  className="w-full max-w-[10rem]"
+                >
+                  <Button className="text-white w-full font-sub bg-black hover:bg-black/90">
                     Visit
                   </Button>
                 </Link>
