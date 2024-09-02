@@ -24,4 +24,5 @@ const HeadTemplate = ({ meta }: { meta: Meta }) => {
     </Head>
   );
 };
+
 export default HeadTemplate;

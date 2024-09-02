@@ -102,3 +102,16 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
   background: #000;
 }
+
+.markdown > * {
+  all: revert;
+}
+
+.markdown > h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-main);
+}

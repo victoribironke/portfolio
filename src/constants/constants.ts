@@ -9,12 +9,28 @@ import { FaProductHunt } from "react-icons/fa";
 import { FaHashnode, FaSquareXTwitter } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 
+export const PAGES = {
+  home: "/",
+  blog: "/blog",
+  blog_post: (slug: string) => `/blog/${slug}`,
+};
+
 export const IMAGES = {
   logo: { src: "/logo.png", w: 600, h: 600 },
 
   seo: {
     home: { src: "/open-graph-images/home.png", w: 1280, h: 720 },
     blog: { src: "/open-graph-images/blog.png", w: 1280, h: 720 },
+    post_firebase_ventivo: {
+      src: "/open-graph-images/post-visualizing-firebase-data-with-ventivo.png",
+      w: 1280,
+      h: 720,
+    },
+    post_codewars_leetcode: {
+      src: "/open-graph-images/post-7-days-of-codewars-and-leetcode.png",
+      w: 1280,
+      h: 720,
+    },
   },
   project: {
     github_user_search: {
@@ -32,6 +48,26 @@ export const IMAGES = {
     merjoh: { src: "/company-merjoh.png", w: 1561, h: 878 },
   },
 };
+
+export const BLOG_POSTS = [
+  {
+    title: "7 days of Codewars and Leetcode challenges",
+    desc: "Summary of a 7-day challenge focused on solving Codewars and Leetcode problems, detailing daily progress, obstacles, and final statistics.",
+    image: IMAGES.seo.post_codewars_leetcode.src,
+    date_published: "2023-01-29T21:09:02.000Z",
+    read_time: "4 min",
+    uid: "clcfebmd8000408ma70p73mqw",
+  },
+  {
+    title:
+      "Visualizing Firebase Data: Unlocking the Power of Real-Time Insights",
+    desc: "Unlock real-time Firebase insights with Looker Studio and Ventivo to enhance app performance and user experience.",
+    image: IMAGES.seo.post_firebase_ventivo.src,
+    date_published: "2024-08-16T12:21:22.000Z",
+    read_time: "3 min",
+    uid: "clzwohpcg00040ajp34388pab",
+  },
+];
 
 export const PROJECTS = [
   {
@@ -130,7 +166,7 @@ export const FOOTER_LINKS = [
   },
   {
     name: "Hashnode",
-    url: "https://victoribironke.hashnode.dev/",
+    url: "https://hashnode.com/@victoribironke",
     icon: FaHashnode,
   },
   {

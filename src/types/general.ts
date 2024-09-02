@@ -10,3 +10,7 @@ export type HeaderAndHeroProps = {
   title: string;
   desc: string;
 };
+
+export type PageLoaderProps = {
+  type: "full" | "small";
+};
