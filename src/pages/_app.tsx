@@ -17,7 +17,7 @@ const sub = Inter({
   variable: "--font-sub",
 });
 
-const name = "Victor"; // unused variable to break a new deployment
+// const name = "Victor"; // unused variable to break a new deployment
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

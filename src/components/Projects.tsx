@@ -65,11 +65,10 @@ const Projects = () => {
               </p>
               <p className="font-sub md:text-lg lg:text-xl">{p.desc}</p>
 
-              <Link
-                href=""
-                className="text-blue lg:text-lg font-sub border-b border-blue pb-1 hover:pb-1.5"
-              >
-                Read more
+              <Link href="">
+                <Button className="text-white font-sub bg-black hover:bg-black/90">
+                  Read more
+                </Button>
               </Link>
             </div>
 

@@ -1,4 +1,3 @@
-import { IMAGES } from "@/constants/constants";
 import { Meta } from "@/types/general";
 import Head from "next/head";
 

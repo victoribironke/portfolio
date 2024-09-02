@@ -2,6 +2,7 @@ import { IMAGES } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const WorkExperience = () => {
   const experience = [
@@ -35,54 +36,6 @@ const WorkExperience = () => {
   ];
 
   return (
-    // <section className="w-full max-w-5xl gap-12 flex flex-col items-center justify-center py-28 px-4">
-    //   <p className="w-fit font-bold text-lg md:text-xl text-blue font-sub self-start">
-    //     WORK EXPERIENCE
-    //   </p>
-
-    //   <div className="w-full max-w-5xl gap-8 mb-4 grid md:grid-cols-2 grid-cols-1">
-    //     {experience.map((e, i) => {
-    //       const start_date = new Date(e.start_date)
-    //         .toDateString()
-    //         .split(" ")
-    //         .slice(1)
-    //         .join(" ");
-    //       const end_date = new Date(e.end_date)
-    //         .toDateString()
-    //         .split(" ")
-    //         .slice(1)
-    //         .join(" ");
-
-    //       return (
-    //         <div key={i} className="w-full flex items-start gap-x-4">
-    //           <img
-    //             src={e.image}
-    //             alt={`${e.company} logo`}
-    //             className="rounded-md w-14 h-14"
-    //           />
-    //           <div className="flex flex-col items-start gap-2">
-    //             <a
-    //               href={e.url}
-    //               target="_blank"
-    //               rel="noreferrer"
-    //               className="text-xl font-bold text-blue font-sub"
-    //             >
-    //               {e.company}
-    //             </a>
-    //             <p className="font-sub text-sm md:text-base">{e.title}</p>
-    //             <p className="text-sm  text-zinc-500 tracking-widest uppercase font-sub">
-    //               {start_date} - {end_date}
-    //             </p>
-    //             <p className="text-sm md:text-base text-zinc-400 font-sub">
-    //               {e.desc}
-    //             </p>
-    //           </div>
-    //         </div>
-    //       );
-    //     })}
-    //   </div>
-    // </section>
-
     <section className="w-full max-w-5xl gap-20 flex flex-col items-center justify-center py-40 px-6">
       <p className="font-main text-4xl md:text-5xl lg:text-7xl text-center w-full">
         WORK EXPERIENCE
@@ -118,12 +71,10 @@ const WorkExperience = () => {
                 </p>
                 <p className="font-sub md:text-lg lg:text-xl">{e.desc}</p>
 
-                <Link
-                  href={e.url}
-                  target="_blank"
-                  className="text-blue lg:text-lg font-sub border-b border-blue pb-1 hover:pb-1.5"
-                >
-                  Visit
+                <Link href={e.url} target="_blank">
+                  <Button className="text-white font-sub bg-black hover:bg-black/90">
+                    Visit
+                  </Button>
                 </Link>
               </div>
 
