@@ -26,9 +26,9 @@ const Projects = () => {
               </p>
               <p className="font-sub md:text-lg lg:text-xl">{p.desc}</p>
 
-              <Link href="" className="w-full max-w-[10rem]">
+              <Link href={p.urls.live} className="w-full max-w-[10rem]">
                 <Button className="text-white font-sub w-full bg-black hover:bg-black/90">
-                  Read more
+                  Visit
                 </Button>
               </Link>
             </div>
