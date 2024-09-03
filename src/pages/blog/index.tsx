@@ -1,15 +1,12 @@
 import Footer from "@/components/general/Footer";
 import HeaderAndHero from "@/components/general/HeaderAndHero";
 import HeadTemplate from "@/components/general/HeadTemplate";
-import PageLoader from "@/components/general/PageLoader";
 import { BLOG_POSTS, IMAGES, PAGES } from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import { BiSolidTime } from "react-icons/bi";
 import { HiCalendar } from "react-icons/hi";
 
-const Blog = ({ data }: { data: any[] }) => {
+const Blog = () => {
   const meta = {
     title: "Victor Ibironke ~ Blog",
     description: "Blog posts about my experiences and projects.",
@@ -33,7 +30,15 @@ const Blog = ({ data }: { data: any[] }) => {
         </p>
 
         <div className="w-full gap-8 flex items-center justify-center flex-col">
-          {BLOG_POSTS.map((b, i) => {
+          {BLOG_POSTS.sort((a, b) =>
+            a.date_published < b.date_published ? 1 : -1
+          ).map((b, i) => {
+            const date_published = new Date(b.date_published)
+              .toDateString()
+              .split(" ")
+              .slice(1)
+              .join(" ");
+
             return (
               <article className="w-full" key={i}>
                 <Link href={PAGES.blog_post(b.slug)}>
@@ -52,14 +57,10 @@ const Blog = ({ data }: { data: any[] }) => {
                         {b.title}
                       </h2>
                       <p className="text-zinc-600 text-[0.95rem]">{b.desc}</p>
-                      <div className="flex items-center gap-4 mt-3 text-sm">
+                      <div className="flex items-center font-blog-heading gap-4 mt-3 text-sm">
                         <div className="flex items-center gap-2">
                           <HiCalendar />
-                          <p>{new Date(b.date_published).toDateString()}</p>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <BiSolidTime />
-                          <p>{b.read_time}</p>
+                          <p>{date_published}</p>
                         </div>
                       </div>
                     </div>
