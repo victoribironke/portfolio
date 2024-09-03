@@ -33,13 +33,13 @@ const WorkExperience = () => {
               )}
             >
               <div className="flex items-start justify-center self-start flex-col w-full md:w-1/2 gap-3">
-                <p className="font-sub text-2xl md:text-3xl lg:text-4xl font-bold">
+                <p className="font-blog-heading text-xl md:text-2xl lg:text-3xl font-bold">
                   {e.company}
                 </p>
-                <p className="font-sub text-xs text-gray-400 uppercase md:text-sm lg:text-base">
+                <p className="font-sub text-xs text-gray-400 uppercase md:text-sm">
                   {e.title}, {start_date} - {end_date}
                 </p>
-                <p className="font-sub md:text-lg lg:text-xl">{e.desc}</p>
+                <p className="font-sub lg:text-lg">{e.desc}</p>
 
                 <Link
                   href={e.url}

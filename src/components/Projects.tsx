@@ -21,10 +21,10 @@ const Projects = () => {
             )}
           >
             <div className="flex items-start justify-center self-start flex-col w-full md:w-1/2 gap-4">
-              <p className="font-sub text-2xl md:text-3xl lg:text-4xl font-bold">
+              <p className="font-blog-heading text-xl md:text-2xl lg:text-3xl font-bold">
                 {p.name}
               </p>
-              <p className="font-sub md:text-lg lg:text-xl">{p.desc}</p>
+              <p className="font-sub lg:text-lg">{p.desc}</p>
 
               <Link href={p.urls.live} className="w-full max-w-[10rem]">
                 <Button className="text-white font-sub w-full bg-black hover:bg-black/90">
