@@ -1,10 +1,10 @@
 import { SharePostProps } from "@/types/general";
 import {
-  BiLogoTwitter,
   BiLogoLinkedinSquare,
   BiLogoFacebookSquare,
   BiLogoWhatsapp,
 } from "react-icons/bi";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { Button } from "../ui/button";
 
 const SharePost = ({ title, slug, desc }: SharePostProps) => {
@@ -12,9 +12,9 @@ const SharePost = ({ title, slug, desc }: SharePostProps) => {
 
   const socials = [
     {
-      icon: BiLogoTwitter,
-      name: "Twitter",
-      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      icon: FaSquareXTwitter,
+      name: "Twitter/X",
+      url: `https://x.com/intent/tweet?text=${encodeURIComponent(
         "Read this article by @victoribironke_"
       )}%0A%0A${title}%0A%0A${blog}${slug}`,
     },
