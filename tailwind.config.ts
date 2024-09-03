@@ -79,6 +79,7 @@ const config = {
       fontFamily: {
         main: ["var(--font-main)"],
         sub: ["var(--font-sub)"],
+        "blog-heading": ["var(--font-blog-heading)"],
       },
     },
   },

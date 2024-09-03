@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Inter, Oswald } from "next/font/google";
+import { Bricolage_Grotesque, Inter, Oswald } from "next/font/google";
 import { RecoilRoot } from "recoil";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
@@ -10,6 +10,11 @@ const main = Oswald({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-main",
+});
+const blog_heading = Bricolage_Grotesque({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-blog-heading",
 });
 const sub = Inter({
   subsets: ["latin"],
@@ -31,7 +36,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         className={cn(
           "flex w-full min-h-screen flex-col items-center",
           main.variable,
-          sub.variable
+          sub.variable,
+          blog_heading.variable
         )}
       >
         <Component {...pageProps} />

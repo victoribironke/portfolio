@@ -57,6 +57,7 @@ export const BLOG_POSTS = [
     date_published: "2023-01-29T21:09:02.000Z",
     read_time: "4 min",
     uid: "clcfebmd8000408ma70p73mqw",
+    slug: "7-days-of-codewars-and-leetcode-challenges",
   },
   {
     title:
@@ -66,6 +67,7 @@ export const BLOG_POSTS = [
     date_published: "2024-08-16T12:21:22.000Z",
     read_time: "3 min",
     uid: "clzwohpcg00040ajp34388pab",
+    slug: "visualizing-firebase-data-unlocking-the-power-of-real-time-insights",
   },
 ];
 
