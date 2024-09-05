@@ -5,7 +5,6 @@ import { Inter, Oswald, Space_Grotesk } from "next/font/google";
 import { RecoilRoot } from "recoil";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
-import { useEffect } from "react";
 
 const main = Oswald({
   subsets: ["latin"],
@@ -24,12 +23,6 @@ const sub = Inter({
 });
 
 const App = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    Array.from(document.getElementsByTagName("a")).forEach(
-      (a) => (a.target = "_blank")
-    );
-  }, []);
-
   return (
     <RecoilRoot>
       <Analytics />
