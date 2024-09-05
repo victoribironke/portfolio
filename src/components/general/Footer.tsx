@@ -23,7 +23,7 @@ const Footer = () => {
 
       <Link
         href={PAGES.blog}
-        className="border-b pb-1 hover:pb-1.5 text-white font-sub"
+        className="border-b pb-1 hover:pb-1.5 text-white font-blog-heading"
       >
         Blog
       </Link>

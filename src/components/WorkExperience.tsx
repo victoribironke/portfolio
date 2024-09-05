@@ -1,8 +1,8 @@
-import { EXPERIENCE } from "@/constants/constants";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "./ui/button";
+// import { EXPERIENCE } from "@/constants/constants";
+// import { cn } from "@/lib/utils";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { Button } from "./ui/button";
 
 const WorkExperience = () => {
   return (
@@ -12,7 +12,7 @@ const WorkExperience = () => {
       </p>
 
       <div className="w-full gap-12 flex items-center justify-center flex-col">
-        {EXPERIENCE.map((e, i) => {
+        {/* {EXPERIENCE.map((e, i) => {
           const start_date = new Date(e.start_date)
             .toDateString()
             .split(" ")
@@ -63,7 +63,7 @@ const WorkExperience = () => {
               </div>
             </div>
           );
-        })}
+        })} */}
       </div>
     </section>
   );

@@ -57,7 +57,7 @@ const Blog = () => {
                         {b.title}
                       </h2>
                       <p className="text-zinc-600 text-[0.95rem]">{b.desc}</p>
-                      <div className="flex items-center font-blog-heading gap-4 mt-3 text-sm">
+                      <div className="flex items-center font-blog-heading font-medium gap-4 mt-3 text-sm">
                         <div className="flex items-center gap-2">
                           <HiCalendar />
                           <p>{date_published}</p>

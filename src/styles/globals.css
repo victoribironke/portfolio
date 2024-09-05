@@ -112,10 +112,18 @@ html::-webkit-scrollbar-track {
 .markdown h3,
 .markdown h4,
 .markdown h5,
-.markdown h6 {
+.markdown h6,
+.markdown strong,
+.markdown a {
   font-family: var(--font-blog-heading);
 }
 
+.markdown h1,
 .markdown a {
   color: #3b82f6;
+}
+
+.markdown img {
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
 }

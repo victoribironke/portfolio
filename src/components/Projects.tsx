@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { PROJECTS } from "@/constants/constants";
-import { Button } from "./ui/button";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+// import Link from "next/link";
+// import { PROJECTS } from "@/constants/constants";
+// import { Button } from "./ui/button";
+// import Image from "next/image";
+// import { cn } from "@/lib/utils";
 
 const Projects = () => {
   return (
@@ -12,7 +12,7 @@ const Projects = () => {
       </p>
 
       <div className="w-full gap-12 flex items-center justify-center flex-col">
-        {PROJECTS.map((p, i) => (
+        {/* {PROJECTS.map((p, i) => (
           <div
             key={i}
             className={cn(
@@ -43,7 +43,7 @@ const Projects = () => {
               />
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </section>
   );

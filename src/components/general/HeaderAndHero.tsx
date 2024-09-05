@@ -26,7 +26,7 @@ const HeaderAndHero = ({ title, desc }: HeaderAndHeroProps) => {
         {title}
       </p>
 
-      <p className="font-sub max-w-3xl md:text-lg lg:text-xl text-center w-full text-gray-400 tracking-widest">
+      <p className="font-blog-heading max-w-3xl md:text-lg lg:text-xl text-center w-full text-gray-400 tracking-widest">
         {desc}
       </p>
     </section>

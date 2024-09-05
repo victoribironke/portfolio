@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Bricolage_Grotesque, Inter, Oswald } from "next/font/google";
+import { Inter, Oswald, Space_Grotesk } from "next/font/google";
 import { RecoilRoot } from "recoil";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
@@ -11,7 +11,7 @@ const main = Oswald({
   display: "swap",
   variable: "--font-main",
 });
-const blog_heading = Bricolage_Grotesque({
+const blog_heading = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-blog-heading",
