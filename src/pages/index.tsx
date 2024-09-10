@@ -31,8 +31,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
 };
 
 const Home = ({ data }: { data: string }) => {
-  console.log(data);
-
   const meta = {
     title: "Victor Ibironke",
     description:
