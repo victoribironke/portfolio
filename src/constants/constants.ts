@@ -59,6 +59,15 @@ export const BLOG_POSTS = [
     uid: "clzwohpcg00040ajp34388pab",
     slug: "visualizing-firebase-data-unlocking-the-power-of-real-time-insights",
   },
+  {
+    title: "Every React Hook and How to Use Them",
+    desc: "Guide to React Hooks: Learn how to use every built-in React Hook effectively to enhance your functional components and improve your React projects.",
+    image:
+      "https://cdn.hashnode.com/res/hashnode/image/upload/v1726173032445/f8a25c60-1577-4e11-8e5b-6a4ae8ab25d5.png",
+    date_published: "2024-09-12T20:31:11.000Z",
+    uid: "cm0zqvlyw000w09md8lblbux3",
+    slug: "every-react-hook-and-how-to-use-them",
+  },
 ];
 
 // export const PROJECTS = [
