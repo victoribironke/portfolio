@@ -11,6 +11,7 @@ import Image from "next/image";
 import SharePost from "@/components/blog/SharePost";
 import { BLOG_POSTS } from "@/constants/blog-posts";
 import MarkdownRenderer from "@/components/general/MarkdownRenderer";
+import { SiBuymeacoffee } from "react-icons/si";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string };
@@ -137,6 +138,18 @@ const BlogPost = ({ data }: { data: string }) => {
           </section>
 
           <SharePost title={title} slug={slug as string} desc={desc} />
+
+          <section className="border-b-2 py-4">
+            <Link href="https://www.buymeacoffee.com/victoribironke">
+              <Button
+                title="Buy me a coffee"
+                aria-label="Buy me a coffee"
+                className="w-full h-12 bg-black hover:bg-black/90 font-blog-heading gap-2"
+              >
+                Buy me a coffee <SiBuymeacoffee />
+              </Button>
+            </Link>
+          </section>
         </div>
       </section>
 
