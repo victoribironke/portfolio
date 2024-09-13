@@ -1,7 +1,8 @@
 import Footer from "@/components/general/Footer";
 import HeaderAndHero from "@/components/general/HeaderAndHero";
 import HeadTemplate from "@/components/general/HeadTemplate";
-import { BLOG_POSTS, IMAGES, PAGES } from "@/constants/constants";
+import { BLOG_POSTS } from "@/constants/blog-posts";
+import { IMAGES, PAGES } from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { HiCalendar } from "react-icons/hi";
@@ -30,9 +31,7 @@ const Blog = () => {
         </p>
 
         <div className="w-full gap-8 flex items-center justify-center flex-col">
-          {BLOG_POSTS.sort((a, b) =>
-            a.date_published < b.date_published ? 1 : -1
-          ).map((b, i) => {
+          {BLOG_POSTS.map((b, i) => {
             const date_published = new Date(b.date_published)
               .toDateString()
               .split(" ")

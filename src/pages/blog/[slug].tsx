@@ -1,7 +1,7 @@
 import Footer from "@/components/general/Footer";
 import HeaderAndHero from "@/components/general/HeaderAndHero";
 import HeadTemplate from "@/components/general/HeadTemplate";
-import { BLOG_POSTS, IMAGES, PAGES } from "@/constants/constants";
+import { IMAGES, PAGES } from "@/constants/constants";
 import { useRouter } from "next/router";
 import Markdown from "react-markdown";
 import { GetServerSideProps } from "next";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { IoIosArrowBack } from "react-icons/io";
 import Image from "next/image";
 import SharePost from "@/components/blog/SharePost";
+import { BLOG_POSTS } from "@/constants/blog-posts";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string };
