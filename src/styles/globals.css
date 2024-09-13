@@ -127,3 +127,7 @@ html::-webkit-scrollbar-track {
   border: 2px solid #e5e7eb;
   border-radius: 0.75rem;
 }
+
+.markdown pre div {
+  border-radius: 0.75rem;
+}

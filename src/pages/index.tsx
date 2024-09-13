@@ -1,9 +1,9 @@
 import Footer from "@/components/general/Footer";
 import HeaderAndHero from "@/components/general/HeaderAndHero";
 import HeadTemplate from "@/components/general/HeadTemplate";
+import MarkdownRenderer from "@/components/general/MarkdownRenderer";
 import { IMAGES } from "@/constants/constants";
 import { GetServerSideProps } from "next";
-import Markdown from "react-markdown";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const owner = "victoribironke";
@@ -52,7 +52,7 @@ const Home = ({ data }: { data: string }) => {
         </p>
 
         <div className="w-full max-w-3xl">
-          <Markdown className="markdown font-sub">{data}</Markdown>
+          <MarkdownRenderer markdown={data} />
         </div>
       </section>
 

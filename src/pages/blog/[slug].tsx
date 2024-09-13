@@ -3,7 +3,6 @@ import HeaderAndHero from "@/components/general/HeaderAndHero";
 import HeadTemplate from "@/components/general/HeadTemplate";
 import { IMAGES, PAGES } from "@/constants/constants";
 import { useRouter } from "next/router";
-import Markdown from "react-markdown";
 import { GetServerSideProps } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -11,6 +10,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import Image from "next/image";
 import SharePost from "@/components/blog/SharePost";
 import { BLOG_POSTS } from "@/constants/blog-posts";
+import MarkdownRenderer from "@/components/general/MarkdownRenderer";
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params as { slug: string };
@@ -94,7 +94,7 @@ const BlogPost = ({ data }: { data: string }) => {
             {title}
           </p>
 
-          <Markdown className="markdown font-sub">{markdown}</Markdown>
+          <MarkdownRenderer markdown={markdown} />
         </div>
 
         <div className="w-full py-4 lg:w-1/3 sticky top-8">
