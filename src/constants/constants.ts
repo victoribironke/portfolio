@@ -8,6 +8,7 @@ import {
 import { FaProductHunt } from "react-icons/fa";
 import { FaHashnode, FaSquareXTwitter } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
+import { SiBuymeacoffee } from "react-icons/si";
 
 export const PAGES = {
   home: "/",
@@ -153,5 +154,10 @@ export const FOOTER_LINKS = [
     name: "dev.to",
     url: "https://dev.to/victoribironke",
     icon: BiLogoDevTo,
+  },
+  {
+    name: "Buy me a coffee",
+    url: "https://buymeacoffee.com/victoribironke",
+    icon: SiBuymeacoffee,
   },
 ];
