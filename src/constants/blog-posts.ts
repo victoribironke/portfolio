@@ -27,4 +27,13 @@ export const BLOG_POSTS = [
     uid: "cm0zqvlyw000w09md8lblbux3",
     slug: "every-react-hook-and-how-to-use-them",
   },
+  {
+    title: "Every Array Method in JavaScript and How to Use Them",
+    desc: "Comprehensive guide on JavaScript's array methods and their usage for efficient data manipulation.",
+    image:
+      "https://cdn.hashnode.com/res/hashnode/image/upload/v1726427805639/bd0a2de0-abec-4b01-a1ba-c29bd691006d.png",
+    date_published: "2024-09-15T19:17:23+00:00",
+    uid: "cm13yk9n7001x0ajz8f70a32e",
+    slug: "every-array-method-in-javascript-and-how-to-use-them",
+  },
 ].sort((a, b) => (a.date_published < b.date_published ? 1 : -1));
