@@ -36,4 +36,13 @@ export const BLOG_POSTS = [
     uid: "cm13yk9n7001x0ajz8f70a32e",
     slug: "every-array-method-in-javascript-and-how-to-use-them",
   },
+  {
+    title: "I Typed Everyday for 50 Days",
+    desc: "Documenting my experience and progress from 50 days of consistent typing practice, including tips, resources, and challenges faced.",
+    image:
+      "https://cdn.hashnode.com/res/hashnode/image/upload/v1727622803623/64ef1d14-d8a8-4540-8812-b45ab9a6d599.jpeg",
+    date_published: "2024-09-29T15:15:37+00:00",
+    uid: "cm1nq39za000509l864pp70ee",
+    slug: "i-typed-everyday-for-50-days",
+  },
 ].sort((a, b) => (a.date_published < b.date_published ? 1 : -1));
