@@ -18,7 +18,7 @@ const Home = () => {
         efficiency, and usability.
       </p>
 
-      <p className="md:text-lg">
+      <p>
         You can reach me here:
         <Link
           href={MAILTO}
@@ -44,7 +44,7 @@ const Home = () => {
 
             <Link
               href={p.link}
-              className="font-light md-text-lg border-b border-dashed w-fit hover:border-b-blue"
+              className="font-light border-b border-dashed w-fit hover:border-b-blue"
             >
               {p.name}
             </Link>
@@ -79,7 +79,7 @@ const Home = () => {
           <li key={i} className="pl-1 text-lg">
             <Link
               href={PAGES.post(b.slug)}
-              className="font-light md-text-lg border-b border-dashed w-fit hover:border-b-blue"
+              className="font-light border-b border-dashed w-fit hover:border-b-blue"
             >
               {b.title}
             </Link>

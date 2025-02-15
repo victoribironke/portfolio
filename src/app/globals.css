@@ -103,6 +103,12 @@ body {
 
 .markdown a {
   color: #d4d4d8;
+  border-bottom: 1px dashed hsl(240, 3.7%, 15.9%);
+  width: fit-content;
+}
+
+.markdown a:hover {
+  border-bottom: 1px dashed #3b82f6;
 }
 
 .markdown p {
