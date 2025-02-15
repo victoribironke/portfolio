@@ -38,7 +38,7 @@ const Home = () => {
             <Avatar className="h-6 w-6 rounded-sm">
               <AvatarImage src={p.image} alt={p.name} />
               <AvatarFallback className="rounded-lg">
-                {p.name.slice(0.2).toUpperCase()}
+                {p.name.slice(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
 
