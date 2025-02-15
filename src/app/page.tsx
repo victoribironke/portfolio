@@ -30,7 +30,7 @@ const Home = () => {
 
       <Separator />
 
-      <h1 className="text-2xl font-medium">My projects</h1>
+      <h1 className="text-2xl font-medium">Projects</h1>
 
       <ul className="text-zinc-300 list-disc pl-5 space-y-1">
         {PROJECTS.map((p, i) => (
