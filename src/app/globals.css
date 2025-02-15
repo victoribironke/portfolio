@@ -101,9 +101,17 @@ body {
   all: revert;
 }
 
-.markdown h1,
 .markdown a {
   color: #3b82f6;
+}
+
+.markdown p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.markdown strong {
+  font-weight: 500;
 }
 
 .markdown img {

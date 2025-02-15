@@ -17,6 +17,14 @@ export const PROJECTS = [
   },
 ];
 
+export const IMAGES = {
+  logo: { src: "/logo.png", w: 600, h: 600 },
+
+  seo: {
+    home: { src: "/open-graph-images/home.png", w: 1280, h: 720 },
+  },
+};
+
 export const BLOG_POSTS = [
   {
     title: "7 days of Codewars and Leetcode challenges",

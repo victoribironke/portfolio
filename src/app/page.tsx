@@ -12,10 +12,10 @@ const Home = () => {
       <Separator />
 
       <p className="md:text-lg">
-        I'm a full-stack developer with a passion for building high-quality web
-        projects. I specialize in creating tools and applications that provide
-        real value to users, with a strong emphasis on simplicity, efficiency,
-        and usability.
+        I&apos;m a full-stack developer with a passion for building high-quality
+        web projects. I specialize in creating tools and applications that
+        provide real value to users, with a strong emphasis on simplicity,
+        efficiency, and usability.
       </p>
 
       <p className="md:text-lg">
