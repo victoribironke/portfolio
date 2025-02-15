@@ -1,101 +1,95 @@
-import Image from "next/image";
+import Footer from "@/components/footer";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+import { BLOG_POSTS, MAILTO, PAGES, PROJECTS } from "@/constants/constants";
+import Link from "next/link";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <h1 className="text-2xl md:text-3xl font-medium">Victor Ibironke</h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <Separator />
+
+      <p className="md:text-lg">
+        I'm a full-stack developer with a passion for building high-quality web
+        projects. I specialize in creating tools and applications that provide
+        real value to users, with a strong emphasis on simplicity, efficiency,
+        and usability.
+      </p>
+
+      <p className="md:text-lg">
+        You can reach me here:
+        <Link
+          href={MAILTO}
+          className="font-light ml-2 border-b border-dashed w-fit hover:border-b-blue"
+        >
+          hello@victoribironke.com
+        </Link>
+      </p>
+
+      <Separator />
+
+      <h1 className="text-2xl font-medium">My projects</h1>
+
+      <ul className="text-zinc-300 list-disc pl-5 space-y-1">
+        {PROJECTS.map((p, i) => (
+          <li key={i} className="pl-1 text-lg flex items-center gap-4">
+            <Avatar className="h-6 w-6 rounded-sm">
+              <AvatarImage src={p.image} alt={p.name} />
+              <AvatarFallback className="rounded-lg">
+                {p.name.slice(0.2).toUpperCase()}
+              </AvatarFallback>
+            </Avatar>
+
+            <Link
+              href={p.link}
+              className="font-light md-text-lg border-b border-dashed w-fit hover:border-b-blue"
+            >
+              {p.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      {/* <div className="max-w-lg w-full flex gap-4">
+        <Avatar className="h-20 w-20 rounded-lg">
+          <AvatarImage
+            src="https://www.ventivo.co/logo-transparent.png"
+            alt="valse"
+          />
+          <AvatarFallback className="rounded-lg">VA</AvatarFallback>
+        </Avatar>
+
+        <div>
+          <p className="text-lg mb-2">Valse</p>
+          <p className="font-light text-zinc-300">
+            Valse is a tool that allows users to automatically sort their
+            Spotify playlists by key.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div> */}
+
+      <Separator />
+
+      <h1 className="text-2xl font-medium">Writing</h1>
+
+      <ul className="text-zinc-300 list-disc pl-5 space-y-1">
+        {BLOG_POSTS.map((b, i) => (
+          <li key={i} className="pl-1 text-lg">
+            <Link
+              href={PAGES.post(b.slug)}
+              className="font-light md-text-lg border-b border-dashed w-fit hover:border-b-blue"
+            >
+              {b.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <Footer />
+    </>
   );
-}
+};
+
+export default Home;
