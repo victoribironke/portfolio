@@ -12,11 +12,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en">
-      <body className="antialiased dark flex items-center justify-center flex-col px-6 py-12">
-        <main className="max-w-3xl w-full flex flex-col gap-6">{children}</main>
-      </body>
-    </html>
+    <main className="max-w-3xl w-full flex flex-col gap-6">{children}</main>
   );
 };
 
