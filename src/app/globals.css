@@ -110,8 +110,14 @@ body {
 
 .markdown p {
   font-weight: 300;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+}
+
+@media (width >= 768px) {
+  .markdown p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 .markdown strong {
