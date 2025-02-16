@@ -22,7 +22,7 @@ const Home = () => {
         You can reach me here:
         <Link
           href={MAILTO}
-          className="font-light ml-2 border-b border-dashed w-fit hover:border-b-blue"
+          className="font-light ml-2 border-b border-dashed w-fit hover:border-b-blue text-sm md:text-base"
         >
           hello@victoribironke.com
         </Link>
@@ -34,7 +34,7 @@ const Home = () => {
 
       <ul className="text-zinc-300 list-disc pl-5 space-y-1">
         {PROJECTS.map((p, i) => (
-          <li key={i} className="pl-1 text-lg flex items-center gap-4">
+          <li key={i} className="pl-1 md:text-lg flex items-center gap-4">
             <Avatar className="h-6 w-6 rounded-sm">
               <AvatarImage src={p.image} alt={p.name} />
               <AvatarFallback className="rounded-lg">
@@ -76,7 +76,7 @@ const Home = () => {
 
       <ul className="text-zinc-300 list-disc pl-5 space-y-1">
         {BLOG_POSTS.map((b, i) => (
-          <li key={i} className="pl-1 text-lg">
+          <li key={i} className="pl-1 md:text-lg">
             <Link
               href={PAGES.post(b.slug)}
               className="font-light border-b border-dashed w-fit hover:border-b-blue"
