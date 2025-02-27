@@ -72,4 +72,13 @@ export const BLOG_POSTS = [
     uid: "cm1nq39za000509l864pp70ee",
     slug: "i-typed-everyday-for-50-days",
   },
+  {
+    title: "My Chess Journey",
+    desc: "Follow my chess journey as I aim for 2000 ELO online, sharing strategies, progress, and learning resources.",
+    image:
+      "https://cdn.hashnode.com/res/hashnode/image/upload/v1740651882212/2c30e74c-4d87-46ca-971c-d2d3c4d153c8.png",
+    date_published: "2025-02-27T10:26:38Z",
+    uid: "cm7n79a20000i0al4b12k5opl",
+    slug: "my-chess-journey",
+  },
 ].sort((a, b) => (a.date_published < b.date_published ? 1 : -1));

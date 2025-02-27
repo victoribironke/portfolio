@@ -1,3 +1,4 @@
+import ChessRatings from "@/components/chess-ratings";
 import Footer from "@/components/footer";
 import MarkdownRenderer from "@/components/markdown-renderer";
 import { BLOG_POSTS } from "@/constants/constants";
@@ -49,6 +50,8 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <h1 className="text-2xl md:text-3xl font-medium">{post?.title}</h1>
+
+      {params.slug === "my-chess-journey" && <ChessRatings />}
 
       <MarkdownRenderer markdown={markdown} />
 

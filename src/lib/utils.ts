@@ -28,3 +28,32 @@ export const getPostContent = async (slug: string) => {
   const res = await req.json();
   return Buffer.from(res.content, "base64").toString("utf-8");
 };
+
+export const getChessRatings = async () => {
+  try {
+    const req = await fetch(
+      "https://api.chess.com/pub/player/boy_victor/stats"
+    );
+    const res = await req.json();
+
+    return {
+      data: [
+        { title: "Rapid", rating: res.chess_rapid?.last?.rating },
+        { title: "Blitz", rating: res.chess_blitz?.last?.rating },
+        { title: "Bullet", rating: 400 },
+        { title: "Daily", rating: res.chess_daily?.last?.rating },
+      ],
+      error: null,
+    };
+  } catch (e) {
+    return {
+      data: [
+        { title: "Rapid", rating: 0 },
+        { title: "Rapid", rating: 0 },
+        { title: "Rapid", rating: 0 },
+        { title: "Rapid", rating: 0 },
+      ],
+      error: e,
+    };
+  }
+};
