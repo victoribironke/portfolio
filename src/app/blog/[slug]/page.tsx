@@ -37,7 +37,7 @@ export const generateMetadata = ({
           url: post.image,
         },
       ],
-      creator: "@victoribironke",
+      creator: "@victoribironke_",
     },
   };
 };
