@@ -15,6 +15,11 @@ export const PROJECTS = [
     link: "https://ventivo.co",
     image: "https://www.ventivo.co/logo.png",
   },
+  {
+    name: "Willow",
+    link: "https://willow-frontend.vercel.app",
+    image: "https://willow-frontend.vercel.app/icon.svg",
+  },
 ];
 
 export const IMAGES = {

@@ -32,13 +32,13 @@ const Home = () => {
 
       <h1 className="text-2xl font-medium">Projects</h1>
 
-      <ul className="text-zinc-300 list-disc pl-5 space-y-1">
+      <ul className="text-zinc-300 list-disc pl-5 space-y-3">
         {PROJECTS.map((p, i) => (
           <li key={i} className="pl-1 md:text-lg flex items-center gap-4">
-            <Avatar className="h-6 w-6 rounded-sm">
+            <Avatar className="size-8 p-1.5 rounded-sm bg-white">
               <AvatarImage src={p.image} alt={p.name} />
-              <AvatarFallback className="rounded-lg">
-                {p.name.slice(0, 2).toUpperCase()}
+              <AvatarFallback className="rounded-lg bg-white text-black">
+                {p.name[0]}
               </AvatarFallback>
             </Avatar>
 
@@ -51,24 +51,6 @@ const Home = () => {
           </li>
         ))}
       </ul>
-
-      {/* <div className="max-w-lg w-full flex gap-4">
-        <Avatar className="h-20 w-20 rounded-lg">
-          <AvatarImage
-            src="https://www.ventivo.co/logo-transparent.png"
-            alt="valse"
-          />
-          <AvatarFallback className="rounded-lg">VA</AvatarFallback>
-        </Avatar>
-
-        <div>
-          <p className="text-lg mb-2">Valse</p>
-          <p className="font-light text-zinc-300">
-            Valse is a tool that allows users to automatically sort their
-            Spotify playlists by key.
-          </p>
-        </div>
-      </div> */}
 
       <Separator />
 
