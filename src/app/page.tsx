@@ -32,25 +32,24 @@ const Home = () => {
 
       <h1 className="text-2xl font-medium">Projects</h1>
 
-      <ul className="text-zinc-300 list-disc pl-5 space-y-3">
+      <div className="w-full grid gap-4 grid-cols-2 sm:grid-cols-4 md:grid-cols-5">
         {PROJECTS.map((p, i) => (
-          <li key={i} className="pl-1 md:text-lg flex items-center gap-4">
-            <Avatar className="size-8 p-1.5 rounded-sm bg-white">
-              <AvatarImage src={p.image} alt={p.name} />
-              <AvatarFallback className="rounded-lg bg-white text-black">
-                {p.name[0]}
-              </AvatarFallback>
-            </Avatar>
+          <Link href={p.link} className="w-full" key={i}>
+            <div className="md:text-lg flex items-center gap-4 w-full aspect-square relative">
+              <Avatar className="w-full h-full p-6 rounded-lg bg-white">
+                <AvatarImage src={p.image} alt={p.name} />
+                <AvatarFallback className="rounded-lg bg-white text-black">
+                  {p.name[0]}
+                </AvatarFallback>
+              </Avatar>
 
-            <Link
-              href={p.link}
-              className="font-light border-b border-dashed w-fit hover:border-b-blue"
-            >
-              {p.name}
-            </Link>
-          </li>
+              <div className="text-black bg-white absolute top-2 left-2 border border-gray-400 shadow px-2 py-1 flex items-center justify-center text-xs gap-1 rounded-md font-medium w-fit whitespace-nowrap">
+                {p.name}
+              </div>
+            </div>
+          </Link>
         ))}
-      </ul>
+      </div>
 
       <Separator />
 
