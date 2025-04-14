@@ -40,7 +40,7 @@ export const getChessRatings = async () => {
       data: [
         { title: "Rapid", rating: res.chess_rapid?.last?.rating },
         { title: "Blitz", rating: res.chess_blitz?.last?.rating },
-        { title: "Bullet", rating: 400 },
+        { title: "Bullet", rating: res.chess_bullet?.last?.rating },
         { title: "Daily", rating: res.chess_daily?.last?.rating },
       ],
       error: null,
@@ -49,9 +49,9 @@ export const getChessRatings = async () => {
     return {
       data: [
         { title: "Rapid", rating: 0 },
-        { title: "Rapid", rating: 0 },
-        { title: "Rapid", rating: 0 },
-        { title: "Rapid", rating: 0 },
+        { title: "Blitz", rating: 0 },
+        { title: "Bullet", rating: 0 },
+        { title: "Daily", rating: 0 },
       ],
       error: e,
     };
