@@ -7,11 +7,21 @@ const Footer = () => {
     <>
       <Separator />
 
-      <div className="w-full md:text-lg flex items-center justify-center gap-4 flex-wrap">
+      <div className="w-full flex items-center justify-center gap-4 flex-wrap">
+        <Link
+          href={PAGES.linkedin}
+          target="_blank"
+          className="border-b border-dashed w-fit hover:border-b-blue"
+        >
+          linkedin
+        </Link>
+
+        <span>/</span>
+
         <Link
           href={PAGES.github}
           target="_blank"
-          className="font-light md:text-lg border-b border-dashed w-fit hover:border-b-blue"
+          className="border-b border-dashed w-fit hover:border-b-blue"
         >
           github
         </Link>
@@ -21,7 +31,7 @@ const Footer = () => {
         <Link
           href={PAGES.twitter}
           target="_blank"
-          className="font-light md:text-lg border-b border-dashed w-fit hover:border-b-blue"
+          className="border-b border-dashed w-fit hover:border-b-blue"
         >
           twitter
         </Link>
@@ -31,7 +41,7 @@ const Footer = () => {
         <Link
           href={PAGES.instagram}
           target="_blank"
-          className="font-light md:text-lg border-b border-dashed w-fit hover:border-b-blue"
+          className="border-b border-dashed w-fit hover:border-b-blue"
         >
           instagram
         </Link>

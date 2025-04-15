@@ -7,18 +7,19 @@ export const PAGES = {
   github: "https://github.com/victoribironke",
   twitter: "https://twitter.com/victoribironke_",
   instagram: "https://instagram.com/victor.ibironke_",
+  linkedin: "https://linkedin.com/in/victor-ibironke",
 };
 
 export const PROJECTS = [
   {
     name: "Ventivo",
     link: "https://ventivo.co",
-    image: "https://www.ventivo.co/logo.png",
+    desc: "Get realtime charts from your data",
   },
   {
     name: "Willow",
     link: "https://willow-frontend.vercel.app",
-    image: "https://willow-frontend.vercel.app/icon.svg",
+    desc: "E-commerce platform for eco-friendly products",
   },
 ];
 

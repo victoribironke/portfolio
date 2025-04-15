@@ -7,11 +7,11 @@ import Link from "next/link";
 const Home = () => {
   return (
     <>
-      <h1 className="text-2xl md:text-3xl font-medium">Victor Ibironke</h1>
+      <h1 className="text-xl md:text-2xl font-medium">Victor Ibironke</h1>
 
       <Separator />
 
-      <p className="md:text-lg">
+      <p>
         I&apos;m a full-stack developer with a passion for building high-quality
         web projects. I specialize in creating tools and applications that
         provide real value to users, with a strong emphasis on simplicity,
@@ -22,7 +22,7 @@ const Home = () => {
         You can reach me here:
         <Link
           href={MAILTO}
-          className="font-light ml-2 border-b border-dashed w-fit hover:border-b-blue text-sm md:text-base"
+          className="ml-2 border-b border-dashed w-fit hover:border-b-blue text-sm md:text-base"
         >
           hello@victoribironke.com
         </Link>
@@ -30,37 +30,35 @@ const Home = () => {
 
       <Separator />
 
-      <h1 className="text-2xl font-medium">Projects</h1>
+      <h1 className="md:text-xl font-medium">Projects</h1>
 
-      <div className="w-full grid gap-4 grid-cols-2 sm:grid-cols-4 md:grid-cols-5">
+      <ul className="text-muted-foreground space-y-1">
         {PROJECTS.map((p, i) => (
-          <Link href={p.link} className="w-full" key={i}>
-            <div className="md:text-lg flex items-center gap-4 w-full aspect-square relative">
-              <Avatar className="w-full h-full p-6 rounded-lg bg-white">
-                <AvatarImage src={p.image} alt={p.name} />
-                <AvatarFallback className="rounded-lg bg-white text-black">
-                  {p.name[0]}
-                </AvatarFallback>
-              </Avatar>
-
-              <div className="text-black bg-white absolute top-2 left-2 border border-gray-400 shadow px-2 py-1 flex items-center justify-center text-xs gap-1 rounded-md font-medium w-fit whitespace-nowrap">
-                {p.name}
-              </div>
-            </div>
-          </Link>
+          <li key={i} className="pl-1 flex list-outside items-center gap-2">
+            <span className="text-black dark:text-white mr-2">•</span>
+            <Link
+              href={p.link}
+              className="border-b border-dashed w-fit hover:border-b-blue"
+            >
+              {p.name}
+            </Link>
+            <span>/</span>
+            <p>{p.desc}</p>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <Separator />
 
-      <h1 className="text-2xl font-medium">Writing</h1>
+      <h1 className="md:text-xl font-medium">Writing</h1>
 
-      <ul className="text-zinc-300 list-disc pl-5 space-y-1">
+      <ul className="text-muted-foreground space-y-1">
         {BLOG_POSTS.map((b, i) => (
-          <li key={i} className="pl-1 md:text-lg">
+          <li key={i} className="pl-1 flex list-outside items-center gap-2">
+            <span className="text-black dark:text-white mr-2">•</span>
             <Link
               href={PAGES.post(b.slug)}
-              className="font-light border-b border-dashed w-fit hover:border-b-blue"
+              className="border-b border-dashed w-fit hover:border-b-blue"
             >
               {b.title}
             </Link>
