@@ -1,5 +1,4 @@
 import Footer from "@/components/footer";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS, MAILTO, PAGES, PROJECTS } from "@/constants/constants";
 import Link from "next/link";
