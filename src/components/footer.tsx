@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { PAGES } from "@/constants/constants";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
@@ -46,6 +48,18 @@ const Footer = () => {
           instagram
         </Link>
       </div>
+
+      <h1 className="md:text-lg mt-6 w-full text-center max-w-sm mx-auto">
+        I write about projects I'm working and other general life topics,
+        sometimes
+      </h1>
+
+      <Input
+        className="w-full mx-auto max-w-sm"
+        placeholder="Your email address"
+      />
+
+      <Button className="w-full mx-auto max-w-sm">Subscribe</Button>
     </>
   );
 };
