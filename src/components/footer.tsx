@@ -49,7 +49,7 @@ const Footer = () => {
         </Link>
       </div>
 
-      <h1 className="md:text-lg mt-6 w-full text-center max-w-sm mx-auto">
+      {/* <h1 className="md:text-lg mt-6 w-full text-center max-w-sm mx-auto">
         I write about projects I'm working and other general life topics,
         sometimes
       </h1>
@@ -59,7 +59,7 @@ const Footer = () => {
         placeholder="Your email address"
       />
 
-      <Button className="w-full mx-auto max-w-sm">Subscribe</Button>
+      <Button className="w-full mx-auto max-w-sm">Subscribe</Button> */}
     </>
   );
 };
