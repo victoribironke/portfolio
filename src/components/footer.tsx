@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { PAGES } from "@/constants/constants";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
