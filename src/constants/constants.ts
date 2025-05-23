@@ -12,6 +12,11 @@ export const PAGES = {
 
 export const PROJECTS = [
   {
+    name: "Postra",
+    link: "https://postra.app",
+    desc: "Schedule your posts to multiple social media platforms",
+  },
+  {
     name: "Ventivo",
     link: "https://ventivo.co",
     desc: "Get realtime charts from your data",
