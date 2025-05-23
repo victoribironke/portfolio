@@ -5,12 +5,11 @@ import { BLOG_POSTS } from "@/constants/constants";
 import { getPostContent } from "@/lib/utils";
 import { Metadata } from "next";
 
-export const generateMetadata = ({
-  params,
-}: {
-  params: { slug: string };
-}): Metadata => {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export const generateMetadata = async (props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> => {
+  const { slug } = await props.params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
 
   if (!post) return {};
 
@@ -21,7 +20,7 @@ export const generateMetadata = ({
       title: post.title,
       description: post.desc,
       type: "article",
-      url: "https://www.victoribironke.com/blog/" + params.slug,
+      url: "https://www.victoribironke.com/blog/" + slug,
       images: [
         {
           url: post.image,
@@ -42,16 +41,17 @@ export const generateMetadata = ({
   };
 };
 
-const Page = async ({ params }: { params: { slug: string } }) => {
-  const data = await getPostContent(params.slug);
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+const Page = async (props: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await props.params;
+  const data = await getPostContent(slug);
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
   const markdown = data.split("---")[2].replaceAll(' align="center"', "");
 
   return (
     <>
       <h1 className="text-2xl md:text-3xl font-semibold">{post?.title}</h1>
 
-      {params.slug === "my-chess-journey" && <ChessRatings />}
+      {slug === "my-chess-journey" && <ChessRatings />}
 
       <MarkdownRenderer markdown={markdown} />
 
