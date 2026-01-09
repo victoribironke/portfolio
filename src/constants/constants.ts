@@ -18,7 +18,7 @@ export const PROJECTS = [
   },
   {
     name: "Ventivo",
-    link: "https://ventivo.co",
+    link: "https://github.com/victoribironke/ventivo",
     desc: "Get realtime charts from your data",
   },
   {
