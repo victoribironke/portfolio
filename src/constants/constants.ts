@@ -26,6 +26,11 @@ export const PROJECTS = [
     link: "https://willow-frontend.vercel.app",
     desc: "E-commerce platform for eco-friendly products",
   },
+  {
+    name: "Marlin",
+    link: "https://github.com/victoribironke/marlin",
+    desc: "Analytical engine for Connect Four",
+  },
 ];
 
 export const IMAGES = {
