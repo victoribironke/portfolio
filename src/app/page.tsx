@@ -33,17 +33,20 @@ const Home = () => {
 
       <ul className="text-muted-foreground space-y-1">
         {PROJECTS.map((p, i) => (
-          <li key={i} className="pl-1 flex list-outside items-center gap-2">
-            <span className="text-black dark:text-white mr-2">•</span>
-            <Link
-              href={p.link}
-              className="border-b border-dashed w-fit hover:border-b-blue"
-            >
-              {p.name}
-            </Link>
-            <span>/</span>
-            <p>{p.desc}</p>
-          </li>
+          <>
+            <li key={i} className="pl-1 flex list-outside items-center gap-2">
+              <span className="text-black dark:text-white mr-2">•</span>
+              <Link
+                href={p.link}
+                className="border-b border-dashed w-fit hover:border-b-blue"
+              >
+                {p.name}
+              </Link>
+              <span className="hidden sm:inline">/</span>
+              <p className="hidden sm:block">{p.desc}</p>
+            </li>
+            <p className="sm:hidden">{p.desc}</p>
+          </>
         ))}
       </ul>
 
