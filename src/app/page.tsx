@@ -11,7 +11,7 @@ const Home = () => {
       <Separator />
 
       <p>
-        I&apos;m a full-stack developer with a passion for building high-quality
+        I&apos;m a software engineer with a passion for building high-quality
         web projects. I specialize in creating tools and applications that
         provide real value to users, with a strong emphasis on simplicity,
         efficiency, and usability.
