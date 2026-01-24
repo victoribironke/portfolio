@@ -38,7 +38,7 @@ const Home = () => {
               <span className="text-black dark:text-white mr-2">•</span>
               <Link
                 href={p.link}
-                className="border-b border-dashed w-fit hover:border-b-blue"
+                className="border-b border-dashed w-fit hover:border-b-blue text-black dark:text-white"
               >
                 {p.name}
               </Link>
