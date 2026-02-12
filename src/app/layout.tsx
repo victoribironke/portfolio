@@ -5,11 +5,11 @@ import { IMAGES } from "@/constants/constants";
 export const metadata: Metadata = {
   title: "Victor Ibironke",
   description:
-    "Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects.",
+    "Victor Ibironke — software engineer building high-quality web projects with a focus on simplicity, efficiency, and usability.",
   openGraph: {
     title: "Victor Ibironke",
     description:
-      "Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects.",
+      "Victor Ibironke — software engineer building high-quality web projects with a focus on simplicity, efficiency, and usability.",
     type: "article",
     url: "https://www.victoribironke.com",
     images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Victor Ibironke",
     description:
-      "Victor Ibironke is a full-stack developer with an enthusiastic drive for building high-quality web projects.",
+      "Victor Ibironke — software engineer building high-quality web projects with a focus on simplicity, efficiency, and usability.",
     images: [
       {
         url: IMAGES.seo.home.src,
