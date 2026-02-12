@@ -1,9 +1,11 @@
 import ChessRatings from "@/components/chess-ratings";
 import Footer from "@/components/footer";
 import MarkdownRenderer from "@/components/markdown-renderer";
-import { BLOG_POSTS } from "@/constants/constants";
+import { BLOG_POSTS, PAGES } from "@/constants/constants";
 import { getPostContent } from "@/lib/utils";
+import { ArrowLeft, Calendar } from "lucide-react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const generateMetadata = async (props: {
   params: Promise<{ slug: string }>;
@@ -49,11 +51,44 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
 
   return (
     <>
-      <h1 className="text-2xl md:text-3xl font-semibold">{post?.title}</h1>
+      {/* Back link */}
+      <Link href={PAGES.home} className="link-pill w-fit text-sm">
+        <ArrowLeft size={14} />
+        Back
+      </Link>
+
+      {/* Post header */}
+      <section className="animate-fade-in space-y-3">
+        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight gradient-text leading-snug">
+          {post?.title}
+        </h1>
+
+        {post?.date_published && (
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Calendar size={14} />
+            <time>
+              {new Date(post.date_published).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </time>
+          </div>
+        )}
+
+        {post?.desc && (
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+            {post.desc}
+          </p>
+        )}
+      </section>
 
       {slug === "my-chess-journey" && <ChessRatings />}
 
-      <MarkdownRenderer markdown={markdown} />
+      {/* Article content */}
+      <article className="animate-slide-up" style={{ animationDelay: "150ms" }}>
+        <MarkdownRenderer markdown={markdown} />
+      </article>
 
       <Footer />
     </>
