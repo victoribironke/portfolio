@@ -1,4 +1,5 @@
 export const MAILTO = "mailto:hello@victoribironke.com";
+export const RESUME_URL = "/resume.pdf";
 
 export const PAGES = {
   home: "/",
