@@ -1,7 +1,7 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 import { Readable } from "stream";
 import { NextResponse } from "next/server";
-import { BLOG_POSTS } from "@/constants/constants";
+import { BLOG_POSTS } from "@/lib/constants";
 
 export const GET = async (request: Request) => {
   const staticRoutes = [{ url: "/", changefreq: "daily", priority: 0.8 }];
@@ -28,7 +28,7 @@ export const GET = async (request: Request) => {
   });
 
   const sitemap = await streamToPromise(Readable.from(links).pipe(stream)).then(
-    (data) => data.toString()
+    (data) => data.toString(),
   );
 
   return new NextResponse(sitemap, {
