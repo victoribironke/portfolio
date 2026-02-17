@@ -1,14 +1,16 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 import { Readable } from "stream";
 import { NextResponse } from "next/server";
-import { BLOG_POSTS } from "@/lib/constants";
+import { getPosts } from "@/sanity/queries";
 
 export const GET = async (request: Request) => {
+  const posts = await getPosts();
+
   const staticRoutes = [{ url: "/", changefreq: "daily", priority: 0.8 }];
 
   const links = [
     ...staticRoutes,
-    ...BLOG_POSTS.map((post) => {
+    ...posts.map((post) => {
       return {
         url: `/blog/${post.slug}`,
         changefreq: "weekly",
