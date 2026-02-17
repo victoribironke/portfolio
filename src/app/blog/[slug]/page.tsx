@@ -1,7 +1,7 @@
 import ChessRatings from "@/components/chess-ratings";
 import Footer from "@/components/footer";
 import MarkdownRenderer from "@/components/markdown-renderer";
-import { BLOG_POSTS, PAGES } from "@/constants/constants";
+import { BLOG_POSTS, PAGES } from "@/lib/constants";
 import { getPostContent } from "@/lib/utils";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { Metadata } from "next";
