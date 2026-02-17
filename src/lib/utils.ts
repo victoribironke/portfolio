@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS } from "@/constants/constants";
+import { BLOG_POSTS } from "@/lib/constants";
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -32,7 +32,7 @@ export const getPostContent = async (slug: string) => {
 export const getChessRatings = async () => {
   try {
     const req = await fetch(
-      "https://api.chess.com/pub/player/boy_victor/stats"
+      "https://api.chess.com/pub/player/boy_victor/stats",
     );
     const res = await req.json();
 
