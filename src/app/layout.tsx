@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { IMAGES } from "@/constants/constants";
+import { IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Victor Ibironke",
