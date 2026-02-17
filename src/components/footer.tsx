@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Separator } from "./ui/separator";
-import { PAGES, RESUME_URL } from "@/constants/constants";
+import { PAGES, RESUME_URL } from "@/lib/constants";
 
 const LINKS = [
   { label: "linkedin", href: PAGES.linkedin },
