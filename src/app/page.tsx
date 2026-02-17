@@ -1,3 +1,4 @@
+import ChessRatings from "@/components/chess-ratings";
 import Footer from "@/components/footer";
 import { MAILTO, PAGES, RESUME_URL } from "@/lib/constants";
 import { getProjects, getPosts } from "@/sanity/queries";
@@ -38,70 +39,83 @@ const Home = async () => {
         </div>
       </section>
 
-      {/* ─── Projects ─── */}
+      {/* ─── Chess ─── */}
       <section
         className="animate-slide-up space-y-3"
-        style={{ animationDelay: "150ms" }}
+        style={{ animationDelay: "100ms" }}
       >
-        <p className="section-label">Projects</p>
-
-        <div className="stagger space-y-1">
-          {projects.map((p) => (
-            <Link
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={p._id}
-              className="item-card flex items-start gap-3 group animate-slide-up"
-            >
-              <div className="flex-1 min-w-0">
-                <span className="font-medium flex items-center gap-1.5">
-                  {p.name}
-                  <ArrowUpRight
-                    size={14}
-                    className="text-muted-foreground opacity-0 group-hover:opacity-100 -translate-y-0.5"
-                  />
-                </span>
-                <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">
-                  {p.description}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <p className="section-label">Chess Ratings</p>
+        <ChessRatings />
       </section>
+
+      {/* ─── Projects ─── */}
+      {projects.length > 0 && (
+        <section
+          className="animate-slide-up space-y-3"
+          style={{ animationDelay: "200ms" }}
+        >
+          <p className="section-label">Projects</p>
+
+          <div className="stagger space-y-1">
+            {projects.map((p) => (
+              <Link
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={p._id}
+                className="item-card flex items-start gap-3 group animate-slide-up"
+              >
+                <div className="flex-1 min-w-0">
+                  <span className="font-medium flex items-center gap-1.5">
+                    {p.name}
+                    <ArrowUpRight
+                      size={14}
+                      className="text-muted-foreground opacity-0 group-hover:opacity-100 -translate-y-0.5"
+                    />
+                  </span>
+                  <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">
+                    {p.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ─── Writing ─── */}
-      <section
-        className="animate-slide-up space-y-3"
-        style={{ animationDelay: "300ms" }}
-      >
-        <p className="section-label">Writing</p>
+      {posts.length > 0 && (
+        <section
+          className="animate-slide-up space-y-3"
+          style={{ animationDelay: "300ms" }}
+        >
+          <p className="section-label">Writing</p>
 
-        <div className="stagger space-y-1">
-          {posts.map((b) => (
-            <Link
-              href={PAGES.post(b.slug)}
-              key={b._id}
-              className="item-card flex items-center justify-between gap-4 group animate-slide-up"
-            >
-              <span className="font-medium flex items-center gap-1.5 min-w-0">
-                <span className="truncate">{b.title}</span>
-                <ArrowUpRight
-                  size={14}
-                  className="text-muted-foreground opacity-0 group-hover:opacity-100 shrink-0 -translate-y-0.5"
-                />
-              </span>
-              <span className="text-xs text-muted-foreground shrink-0 hidden sm:block">
-                {new Date(b.publishedAt).toLocaleDateString("en-US", {
-                  month: "short",
-                  year: "numeric",
-                })}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
+          <div className="stagger space-y-1">
+            {posts.map((b) => (
+              <Link
+                href={PAGES.post(b.slug)}
+                key={b._id}
+                className="item-card flex items-center justify-between gap-4 group animate-slide-up"
+              >
+                <span className="font-medium flex items-center gap-1.5 min-w-0">
+                  <span className="truncate">{b.title}</span>
+                  <ArrowUpRight
+                    size={14}
+                    className="text-muted-foreground opacity-0 group-hover:opacity-100 shrink-0 -translate-y-0.5"
+                  />
+                </span>
+                <span className="text-xs text-muted-foreground shrink-0 hidden sm:block">
+                  {new Date(b.publishedAt).toLocaleDateString("en-US", {
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <Footer />
     </>
