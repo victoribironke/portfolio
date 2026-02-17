@@ -5,7 +5,7 @@ import {
   PAGES,
   PROJECTS,
   RESUME_URL,
-} from "@/constants/constants";
+} from "@/lib/constants";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
 import Link from "next/link";
 
