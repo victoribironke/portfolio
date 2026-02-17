@@ -1,43 +1,36 @@
 import ChessRatings from "@/components/chess-ratings";
 import Footer from "@/components/footer";
-import MarkdownRenderer from "@/components/markdown-renderer";
-import { BLOG_POSTS, PAGES } from "@/lib/constants";
-import { getPostContent } from "@/lib/utils";
+import PortableTextRenderer from "@/components/portable-text-renderer";
+import { PAGES } from "@/lib/constants";
+import { getPostBySlug } from "@/sanity/queries";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const generateMetadata = async (props: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> => {
   const { slug } = await props.params;
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) return {};
 
   return {
     title: post.title,
-    description: post.desc,
+    description: post.description,
     openGraph: {
       title: post.title,
-      description: post.desc,
+      description: post.description,
       type: "article",
       url: "https://www.victoribironke.com/blog/" + slug,
-      images: [
-        {
-          url: post.image,
-        },
-      ],
+      images: post.coverImage ? [{ url: post.coverImage }] : [],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.desc,
-      images: [
-        {
-          url: post.image,
-        },
-      ],
+      description: post.description,
+      images: post.coverImage ? [{ url: post.coverImage }] : [],
       creator: "@victoribironke_",
     },
   };
@@ -45,9 +38,9 @@ export const generateMetadata = async (props: {
 
 const Page = async (props: { params: Promise<{ slug: string }> }) => {
   const { slug } = await props.params;
-  const data = await getPostContent(slug);
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
-  const markdown = data.split("---")[2].replaceAll(' align="center"', "");
+  const post = await getPostBySlug(slug);
+
+  if (!post) notFound();
 
   return (
     <>
@@ -60,14 +53,14 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
       {/* Post header */}
       <section className="animate-fade-in space-y-3">
         <h1 className="text-2xl md:text-3xl font-semibold tracking-tight gradient-text leading-snug">
-          {post?.title}
+          {post.title}
         </h1>
 
-        {post?.date_published && (
+        {post.publishedAt && (
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Calendar size={14} />
             <time>
-              {new Date(post.date_published).toLocaleDateString("en-US", {
+              {new Date(post.publishedAt).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
@@ -76,9 +69,9 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
           </div>
         )}
 
-        {post?.desc && (
+        {post.description && (
           <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
-            {post.desc}
+            {post.description}
           </p>
         )}
       </section>
@@ -87,7 +80,7 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
 
       {/* Article content */}
       <article className="animate-slide-up" style={{ animationDelay: "150ms" }}>
-        <MarkdownRenderer markdown={markdown} />
+        <PortableTextRenderer body={post.body} />
       </article>
 
       <Footer />
