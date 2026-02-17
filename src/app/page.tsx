@@ -1,15 +1,12 @@
 import Footer from "@/components/footer";
-import {
-  BLOG_POSTS,
-  MAILTO,
-  PAGES,
-  PROJECTS,
-  RESUME_URL,
-} from "@/lib/constants";
+import { MAILTO, PAGES, RESUME_URL } from "@/lib/constants";
+import { getProjects, getPosts } from "@/sanity/queries";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
 import Link from "next/link";
 
-const Home = () => {
+const Home = async () => {
+  const [projects, posts] = await Promise.all([getProjects(), getPosts()]);
+
   return (
     <>
       {/* ─── Hero ─── */}
@@ -49,12 +46,12 @@ const Home = () => {
         <p className="section-label">Projects</p>
 
         <div className="stagger space-y-1">
-          {PROJECTS.map((p, i) => (
+          {projects.map((p) => (
             <Link
               href={p.link}
               target="_blank"
               rel="noopener noreferrer"
-              key={i}
+              key={p._id}
               className="item-card flex items-start gap-3 group animate-slide-up"
             >
               <div className="flex-1 min-w-0">
@@ -66,7 +63,7 @@ const Home = () => {
                   />
                 </span>
                 <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">
-                  {p.desc}
+                  {p.description}
                 </p>
               </div>
             </Link>
@@ -82,10 +79,10 @@ const Home = () => {
         <p className="section-label">Writing</p>
 
         <div className="stagger space-y-1">
-          {BLOG_POSTS.map((b, i) => (
+          {posts.map((b) => (
             <Link
               href={PAGES.post(b.slug)}
-              key={i}
+              key={b._id}
               className="item-card flex items-center justify-between gap-4 group animate-slide-up"
             >
               <span className="font-medium flex items-center gap-1.5 min-w-0">
@@ -96,7 +93,7 @@ const Home = () => {
                 />
               </span>
               <span className="text-xs text-muted-foreground shrink-0 hidden sm:block">
-                {new Date(b.date_published).toLocaleDateString("en-US", {
+                {new Date(b.publishedAt).toLocaleDateString("en-US", {
                   month: "short",
                   year: "numeric",
                 })}
