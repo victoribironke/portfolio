@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { IMAGES } from "@/lib/constants";
+import StudioShortcut from "@/components/studio-shortcut";
 
 export const metadata: Metadata = {
   title: "Victor Ibironke",
@@ -40,6 +41,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className="antialiased dark flex items-center justify-center flex-col px-6 py-12">
+        <StudioShortcut />
         <main className="max-w-3xl w-full flex flex-col gap-6">{children}</main>
       </body>
     </html>
