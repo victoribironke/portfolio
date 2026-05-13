@@ -27,7 +27,7 @@ const Home = async () => {
             hello@victoribironke.com
           </Link>
 
-          <Link
+          {/* <Link
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -35,7 +35,7 @@ const Home = async () => {
           >
             <Download size={14} />
             Resume
-          </Link>
+          </Link> */}
         </div>
       </section>
 
@@ -66,13 +66,13 @@ const Home = async () => {
                 className="item-card flex items-start gap-3 group animate-slide-up"
               >
                 <div className="flex-1 min-w-0">
-                  <span className="font-medium flex items-center gap-1.5">
+                  <h6 className="font-medium flex items-center gap-1.5 text-lg">
                     {p.name}
                     <ArrowUpRight
                       size={14}
                       className="text-muted-foreground opacity-0 group-hover:opacity-100 -translate-y-0.5"
                     />
-                  </span>
+                  </h6>
                   <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">
                     {p.description}
                   </p>
