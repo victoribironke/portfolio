@@ -3,11 +3,11 @@ import { Separator } from "./ui/separator";
 import { PAGES, RESUME_URL } from "@/lib/constants";
 
 const LINKS = [
-  { label: "linkedin", href: PAGES.linkedin },
-  { label: "github", href: PAGES.github },
-  { label: "twitter", href: PAGES.twitter },
-  { label: "instagram", href: PAGES.instagram },
-  { label: "resume", href: RESUME_URL },
+  { label: "Linkedin", href: PAGES.linkedin },
+  { label: "GitHub", href: PAGES.github },
+  { label: "Twitter", href: PAGES.twitter },
+  { label: "Instagram", href: PAGES.instagram },
+  { label: "Résumé", href: RESUME_URL },
 ];
 
 const Footer = () => {
