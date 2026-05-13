@@ -1,8 +1,8 @@
 import ChessRatings from "@/components/chess-ratings";
 import Footer from "@/components/footer";
-import { MAILTO, PAGES, RESUME_URL } from "@/lib/constants";
+import { MAILTO, PAGES } from "@/lib/constants";
 import { getProjects, getPosts } from "@/sanity/queries";
-import { ArrowUpRight, Download, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import Link from "next/link";
 
 const Home = async () => {
