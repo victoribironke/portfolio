@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -115,6 +115,15 @@ body {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out both;
 }
@@ -178,6 +187,7 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: hsl(240, 5%, 45%);
+  /* font-family: "Fraunces", Arial, Helvetica, sans-serif; */
 }
 
 /* ─── Redesign: Project/Blog card ─── */
