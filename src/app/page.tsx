@@ -76,14 +76,14 @@ const Home = async () => {
                 className="item-card flex items-start gap-3 group animate-slide-up"
               >
                 <div className="flex-1 min-w-0">
-                  <h6 className="font-medium flex items-center gap-1.5 text-lg">
+                  <h6 className="font-medium flex items-center gap-1.5 text-lg md:text-xl mb-2">
                     {p.name}
                     <ArrowUpRight
                       size={14}
                       className="text-muted-foreground opacity-0 group-hover:opacity-100 -translate-y-0.5"
                     />
                   </h6>
-                  <p className="text-sm text-muted-foreground mt-0.5 leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground mt-0.5 leading-relaxed">
                     {p.description}
                   </p>
                 </div>
