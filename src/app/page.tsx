@@ -1,5 +1,6 @@
 import ChessRatings from "@/components/chess-ratings";
 import Footer from "@/components/footer";
+import Spotify from "@/components/spotify";
 import { MAILTO, PAGES } from "@/lib/constants";
 import { getProjects, getPosts } from "@/sanity/queries";
 import { ArrowUpRight, Mail } from "lucide-react";
@@ -48,11 +49,20 @@ const Home = async () => {
         <ChessRatings />
       </section>
 
+      {/* ─── Currently listening to ─── */}
+      <section
+        className="animate-slide-up space-y-3"
+        style={{ animationDelay: "200ms" }}
+      >
+        <p className="section-label">Currently listening to</p>
+        <Spotify />
+      </section>
+
       {/* ─── Projects ─── */}
       {projects.length > 0 && (
         <section
           className="animate-slide-up space-y-3"
-          style={{ animationDelay: "200ms" }}
+          style={{ animationDelay: "300ms" }}
         >
           <p className="section-label">Projects</p>
 
@@ -87,7 +97,7 @@ const Home = async () => {
       {posts.length > 0 && (
         <section
           className="animate-slide-up space-y-3"
-          style={{ animationDelay: "300ms" }}
+          style={{ animationDelay: "400ms" }}
         >
           <p className="section-label">Writing</p>
 
