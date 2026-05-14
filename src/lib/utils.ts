@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { SpotifyNowPlaying } from "./types";
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
@@ -29,5 +30,17 @@ export const getChessRatings = async () => {
       ],
       error: e,
     };
+  }
+};
+
+export const getNowPlaying = async () => {
+  try {
+    const res = await fetch("/api/now-playing");
+
+    const data = await res.json();
+
+    return data.track as SpotifyNowPlaying;
+  } catch {
+    return { isPlaying: false };
   }
 };
