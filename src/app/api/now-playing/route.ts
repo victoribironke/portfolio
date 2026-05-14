@@ -1,15 +1,21 @@
 import { CREDENTIALS } from "@/lib/constants";
 import { redis } from "@/lib/redis";
+import { getComplementaryColor } from "@/lib/utils";
 import sharp from "sharp";
 
-const getDominantColor = async (imageUrl: string) => {
+const getDominantAndComplementaryColors = async (imageUrl: string) => {
   const res = await fetch(imageUrl);
   const buffer = await res.arrayBuffer();
+
   const { dominant } = await sharp(Buffer.from(buffer))
     .resize(50, 50) // small = fast
     .stats();
 
-  return `${dominant.r}, ${dominant.g}, ${dominant.b}`;
+  const { r, g, b } = dominant;
+
+  const complementaryColor = getComplementaryColor(r, g, b);
+
+  return { complementaryColor, dominantColor: `${r}, ${g}, ${b}` };
 };
 
 const getValidAccessToken = async () => {
@@ -76,9 +82,8 @@ export const GET = async () => {
 
     const data = await res.json();
 
-    const dominantColor = await getDominantColor(
-      data.item.album.images[0]?.url,
-    );
+    const { dominantColor, complementaryColor } =
+      await getDominantAndComplementaryColors(data.item.album.images[0]?.url);
 
     const track = {
       isPlaying: data.is_playing,
@@ -89,6 +94,7 @@ export const GET = async () => {
       songUrl: data.item.external_urls.spotify,
       progressMs: data.progress_ms,
       dominantColor,
+      complementaryColor,
       durationMs: data.item.duration_ms,
       updatedAt: Date.now(),
     };
