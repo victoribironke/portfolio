@@ -44,3 +44,45 @@ export const getNowPlaying = async () => {
     return { isPlaying: false };
   }
 };
+
+const rgbToHsl = (r: number, g: number, b: number) => {
+  r /= 255;
+  g /= 255;
+  b /= 255;
+  const max = Math.max(r, g, b),
+    min = Math.min(r, g, b);
+  let h, s;
+
+  const l = (max + min) / 2;
+
+  if (max === min) {
+    h = s = 0;
+  } else {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+    switch (max) {
+      case r:
+        h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
+        break;
+      case g:
+        h = ((b - r) / d + 2) / 6;
+        break;
+      case b:
+        h = ((r - g) / d + 4) / 6;
+        break;
+      default:
+        h = 1;
+    }
+  }
+  return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+};
+
+export const getComplementaryColor = (r: number, g: number, b: number) => {
+  const [h, s, l] = rgbToHsl(r, g, b);
+  const complementH = (h + 180) % 360;
+  // Bump saturation and lightness so it's vivid enough to use as an accent
+  return s < 20
+    ? "#1db954"
+    : `hsl(${complementH}, ${Math.max(s, 70)}%, ${Math.max(l, 65)}%)`;
+};
