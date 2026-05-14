@@ -14,11 +14,11 @@ const SpotifyIcon = () => (
   </svg>
 );
 
-const EqualizerBars = () => (
+const EqualizerBars = ({ color = "#1db954" }) => (
   <span className="equalizer" aria-label="Playing">
-    <span />
-    <span />
-    <span />
+    <span style={{ background: color }} />
+    <span style={{ background: color }} />
+    <span style={{ background: color }} />
     <style>{`
       .equalizer {
         display: inline-flex;
@@ -81,7 +81,9 @@ const Spotify = () => {
           <SpotifyIcon />
           Spotify
         </span>
-        {!loading && isPlaying && <EqualizerBars />}
+        {!loading && isPlaying && (
+          <EqualizerBars color={track.complementaryColor} />
+        )}
       </div>
 
       {/* Loading */}
