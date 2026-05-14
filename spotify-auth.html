@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Auth</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0a0a0a;
+        font-family: "Courier New", monospace;
+        color: #e8e8e8;
+      }
+
+      .card {
+        background: #111;
+        border: 1px solid #222;
+        border-radius: 12px;
+        padding: 48px;
+        width: 100%;
+        max-width: 480px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      h1 {
+        font-size: 1rem;
+        font-weight: normal;
+        color: #1db954;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 0.85rem;
+        color: #888;
+        line-height: 1.6;
+      }
+
+      button {
+        padding: 14px 24px;
+        border-radius: 8px;
+        border: none;
+        font-family: inherit;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: opacity 0.15s;
+        letter-spacing: 0.05em;
+      }
+      button:hover {
+        opacity: 0.85;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      #connectBtn {
+        background: #1db954;
+        color: #000;
+        font-weight: bold;
+      }
+
+      #saveBtn {
+        background: #1a1a1a;
+        color: #e8e8e8;
+        border: 1px solid #333;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      label {
+        font-size: 0.75rem;
+        color: #555;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      input {
+        background: #0a0a0a;
+        border: 1px solid #222;
+        border-radius: 6px;
+        padding: 10px 14px;
+        color: #e8e8e8;
+        font-family: inherit;
+        font-size: 0.8rem;
+        width: 100%;
+      }
+      input:focus {
+        outline: 1px solid #1db954;
+      }
+
+      #status {
+        font-size: 0.8rem;
+        padding: 12px;
+        border-radius: 6px;
+        display: none;
+      }
+      #status.success {
+        background: #0d2b18;
+        color: #1db954;
+        border: 1px solid #1db95440;
+      }
+      #status.error {
+        background: #2b0d0d;
+        color: #f55;
+        border: 1px solid #f5555540;
+      }
+
+      #tokenSection {
+        display: none;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #1a1a1a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>// Spotify Auth</h1>
+      <p>
+        One-time setup. Connect your Spotify account to get an access token and
+        refresh token, then save them to Redis.
+      </p>
+
+      <hr />
+
+      <div class="field">
+        <label>Client ID</label>
+        <input id="clientId" type="text" placeholder="your spotify client id" />
+      </div>
+      <div class="field">
+        <label>Client Secret</label>
+        <input
+          id="clientSecret"
+          type="password"
+          placeholder="your spotify client secret"
+        />
+      </div>
+      <div class="field">
+        <label>Redirect URI</label>
+        <input
+          id="redirectUri"
+          type="text"
+          value=""
+          placeholder="http://localhost:3000/spotify-auth.html"
+        />
+      </div>
+
+      <button id="connectBtn" onclick="startAuth()">Connect Spotify</button>
+
+      <div id="tokenSection">
+        <hr />
+        <p style="color: #1db954">
+          ✓ Tokens received. Copy these into Upstash.
+        </p>
+        <div class="field">
+          <label>Key: spotify:access_token</label>
+          <div style="display: flex; gap: 8px">
+            <input id="outAccessToken" type="text" readonly />
+            <button
+              onclick="copy('outAccessToken')"
+              style="
+                padding: 10px 14px;
+                background: #1a1a1a;
+                border: 1px solid #333;
+                color: #e8e8e8;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 0.8rem;
+                white-space: nowrap;
+              "
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Key: spotify:refresh_token</label>
+          <div style="display: flex; gap: 8px">
+            <input id="outRefreshToken" type="text" readonly />
+            <button
+              onclick="copy('outRefreshToken')"
+              style="
+                padding: 10px 14px;
+                background: #1a1a1a;
+                border: 1px solid #333;
+                color: #e8e8e8;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 0.8rem;
+                white-space: nowrap;
+              "
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="field">
+          <label
+            >Key: spotify:expires_at
+            <span style="color: #555">(unix ms)</span></label
+          >
+          <div style="display: flex; gap: 8px">
+            <input id="outExpiresAt" type="text" readonly />
+            <button
+              onclick="copy('outExpiresAt')"
+              style="
+                padding: 10px 14px;
+                background: #1a1a1a;
+                border: 1px solid #333;
+                color: #e8e8e8;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 0.8rem;
+                white-space: nowrap;
+              "
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="status"></div>
+    </div>
+
+    <script>
+      // Filled in after redirect
+      let pendingTokens = null;
+
+      function setStatus(msg, type) {
+        const el = document.getElementById("status");
+        el.textContent = msg;
+        el.className = type;
+        el.style.display = "block";
+      }
+
+      function startAuth() {
+        const clientId = document.getElementById("clientId").value.trim();
+        const redirectUri = document.getElementById("redirectUri").value.trim();
+
+        if (!clientId || !redirectUri) {
+          setStatus("Client ID and Redirect URI are required.", "error");
+          return;
+        }
+
+        // Store for after redirect
+        sessionStorage.setItem("spotify_client_id", clientId);
+        sessionStorage.setItem(
+          "spotify_client_secret",
+          document.getElementById("clientSecret").value.trim(),
+        );
+        sessionStorage.setItem("spotify_redirect_uri", redirectUri);
+
+        const scope = "user-read-currently-playing user-read-playback-state";
+        const state = crypto.randomUUID();
+        sessionStorage.setItem("spotify_state", state);
+
+        const params = new URLSearchParams({
+          client_id: clientId,
+          response_type: "code",
+          redirect_uri: redirectUri,
+          scope,
+          state,
+        });
+
+        window.location.href = `https://accounts.spotify.com/authorize?${params}`;
+      }
+
+      async function exchangeCode(code) {
+        const clientId = sessionStorage.getItem("spotify_client_id");
+        const clientSecret = sessionStorage.getItem("spotify_client_secret");
+        const redirectUri = sessionStorage.getItem("spotify_redirect_uri");
+
+        const credentials = btoa(`${clientId}:${clientSecret}`);
+
+        const res = await fetch("https://accounts.spotify.com/api/token", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Authorization: `Basic ${credentials}`,
+          },
+          body: new URLSearchParams({
+            grant_type: "authorization_code",
+            code,
+            redirect_uri: redirectUri,
+          }),
+        });
+
+        if (!res.ok) throw new Error(`Token exchange failed: ${res.status}`);
+        return res.json();
+      }
+
+      function copy(inputId) {
+        const el = document.getElementById(inputId);
+        navigator.clipboard.writeText(el.value);
+      }
+
+      // On page load, check if we're back from Spotify redirect
+      (async () => {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+        const state = params.get("state");
+        const error = params.get("error");
+
+        if (error) {
+          setStatus(`Spotify denied access: ${error}`, "error");
+          return;
+        }
+
+        if (!code) return; // Fresh page load, nothing to do
+
+        const savedState = sessionStorage.getItem("spotify_state");
+        if (state !== savedState) {
+          setStatus("State mismatch — possible CSRF. Try again.", "error");
+          return;
+        }
+
+        // Restore fields from session
+        document.getElementById("clientId").value =
+          sessionStorage.getItem("spotify_client_id") || "";
+        document.getElementById("redirectUri").value =
+          sessionStorage.getItem("spotify_redirect_uri") || "";
+
+        setStatus("Exchanging code for tokens...", "success");
+
+        try {
+          const tokens = await exchangeCode(code);
+          const expiresAt = Date.now() + tokens.expires_in * 1000;
+
+          document.getElementById("outAccessToken").value = tokens.access_token;
+          document.getElementById("outRefreshToken").value =
+            tokens.refresh_token;
+          document.getElementById("outExpiresAt").value = expiresAt;
+
+          // Clean up URL
+          window.history.replaceState({}, "", window.location.pathname);
+
+          document.getElementById("tokenSection").style.display = "flex";
+          document.getElementById("tokenSection").style.flexDirection =
+            "column";
+          document.getElementById("tokenSection").style.gap = "16px";
+          setStatus(
+            "✓ Done. Copy the three values into Upstash and you're set.",
+            "success",
+          );
+        } catch (err) {
+          setStatus(err.message, "error");
+        }
+      })();
+    </script>
+  </body>
+</html>
