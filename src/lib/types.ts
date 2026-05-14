@@ -2,6 +2,7 @@ export type SpotifyNowPlaying = {
   isPlaying: boolean;
   title?: string;
   dominantColor?: string;
+  complementaryColor?: string;
   artist?: string;
   album?: string;
   albumArt?: string;
