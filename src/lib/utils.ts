@@ -80,7 +80,6 @@ const rgbToHsl = (r: number, g: number, b: number) => {
 
 export const getComplementaryColor = (r: number, g: number, b: number) => {
   const [h, s, l] = rgbToHsl(r, g, b);
-  // Bump saturation and lightness so it's vivid enough to use as an accent
 
   return s < 20 ? "#1db954" : `hsl(${h}, ${s}%, ${Math.min(l + 25, 95)}%)`;
 };
