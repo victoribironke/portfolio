@@ -86,3 +86,27 @@ export const getComplementaryColor = (r: number, g: number, b: number) => {
     ? "#1db954"
     : `hsl(${complementH}, ${Math.max(s, 70)}%, ${Math.max(l, 65)}%)`;
 };
+
+// export const getAccentColors = (r: number, g: number, b: number) => {
+//   const [h, s, l] = rgbToHsl(r, g, b);
+
+//   // Helper to ensure the hue loops correctly between 0 and 360
+//   const adjustHue = (hue: number, amount: number) => (hue + amount + 360) % 360;
+
+//   // Fallback for grays/blacks/whites to avoid dull accent colors
+//   const safeSaturation = Math.max(s, 40);
+
+//   return {
+//     // 1. ANALOGOUS: Smooth blending, nature-like harmonies
+//     analogousWarm: `hsl(${adjustHue(h, 30)}, ${safeSaturation}%, ${l}%)`,
+//     analogousCool: `hsl(${adjustHue(h, -30)}, ${safeSaturation}%, ${l}%)`,
+
+//     // 2. MONOCHROMATIC: Guaranteed to match, creates depth
+//     lighter: `hsl(${h}, ${s}%, ${Math.min(l + 25, 95)}%)`,
+//     darker: `hsl(${h}, ${s}%, ${Math.max(l - 25, 10)}%)`,
+
+//     // 3. SPLIT-COMPLEMENTARY: A softer "pop" than pure complementary
+//     splitWarm: `hsl(${adjustHue(h, 150)}, ${safeSaturation}%, ${Math.max(l, 50)}%)`,
+//     splitCool: `hsl(${adjustHue(h, -150)}, ${safeSaturation}%, ${Math.max(l, 50)}%)`,
+//   };
+// };
