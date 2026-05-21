@@ -1,23 +1,20 @@
-import {
-  PortableText,
-  type PortableTextComponents,
-} from "@portabletext/react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "@/sanity/image";
 
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
-      <h2 className="text-2xl font-semibold mt-8 mb-4">{children}</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-4">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl font-semibold mt-6 mb-3">{children}</h3>
+      <h3 className="text-lg font-semibold mt-6 mb-3">{children}</h3>
     ),
     h4: ({ children }) => (
-      <h4 className="text-lg font-semibold mt-4 mb-2">{children}</h4>
+      <h4 className="text-base font-semibold mt-4 mb-2">{children}</h4>
     ),
     normal: ({ children }) => (
-      <p className="leading-relaxed mb-4">{children}</p>
+      <p className="leading-relaxed mb-4 text-base">{children}</p>
     ),
     blockquote: ({ children }) => (
       <blockquote className="border-l-2 border-muted-foreground/30 pl-4 italic text-muted-foreground my-4">
@@ -26,7 +23,9 @@ const components: PortableTextComponents = {
     ),
   },
   marks: {
-    strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+    strong: ({ children }) => (
+      <strong className="font-semibold">{children}</strong>
+    ),
     em: ({ children }) => <em>{children}</em>,
     underline: ({ children }) => <u>{children}</u>,
     "strike-through": ({ children }) => <s>{children}</s>,
@@ -81,11 +80,44 @@ const components: PortableTextComponents = {
     },
     code: ({ value }) => (
       <pre className="bg-[#0d1117] rounded-lg p-4 overflow-x-auto my-4">
-        <code className={`text-sm font-mono language-${value.language || "text"}`}>
+        <code
+          className={`text-sm font-mono language-${value.language || "text"}`}
+        >
           {value.code}
         </code>
       </pre>
     ),
+    youtube: ({ value }) => {
+      if (!value?.url) return null;
+
+      // Extract video ID from various YouTube URL formats
+      let videoId: string | null = null;
+      try {
+        const url = new URL(value.url);
+        if (url.hostname.includes("youtube.com")) {
+          videoId = url.searchParams.get("v");
+        } else if (url.hostname.includes("youtu.be")) {
+          videoId = url.pathname.slice(1);
+        }
+      } catch {
+        return null;
+      }
+
+      if (!videoId) return null;
+
+      return (
+        <div className="my-6">
+          <iframe
+            className="w-full rounded-lg"
+            style={{ aspectRatio: "16 / 9" }}
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title="YouTube video"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      );
+    },
   },
 };
 
