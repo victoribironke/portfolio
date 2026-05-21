@@ -280,15 +280,13 @@ h6 {
   line-height: 1.6;
 }
 
-/* Reset all elements to browser defaults within markdown container */
 .markdown > * {
-  all: revert;
   margin-bottom: 1rem;
 }
 
 /* Headings */
 .markdown h1 {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -296,7 +294,7 @@ h6 {
 }
 
 .markdown h2 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 500;
   margin-top: 1.75rem;
   margin-bottom: 0.75rem;
@@ -304,28 +302,28 @@ h6 {
 }
 
 .markdown h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 .markdown h4 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
 .markdown h5 {
-  font-size: 1.1rem;
+  font-size: 0.938rem;
   font-weight: 500;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .markdown h6 {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -334,15 +332,9 @@ h6 {
 /* Paragraphs */
 .markdown p {
   font-weight: 400;
-  font-size: 1rem;
+  /* font-size: 0.938rem; */
   margin-bottom: 1rem;
-}
-
-@media (width >= 768px) {
-  .markdown p {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
+  line-height: 1.65;
 }
 
 /* Links */
