@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export const post = defineType({
   name: "post",
-  title: "Post",
+  title: "Posts",
   type: "document",
   fields: [
     defineField({
@@ -77,7 +77,10 @@ export const post = defineType({
                     type: "url",
                     title: "URL",
                     validation: (rule) =>
-                      rule.uri({ allowRelative: true, scheme: ["http", "https", "mailto"] }),
+                      rule.uri({
+                        allowRelative: true,
+                        scheme: ["http", "https", "mailto"],
+                      }),
                   },
                 ],
               },
@@ -128,6 +131,30 @@ export const post = defineType({
               type: "text",
             },
           ],
+        },
+        {
+          type: "object",
+          name: "youtube",
+          title: "YouTube Video",
+          fields: [
+            {
+              name: "url",
+              title: "YouTube URL",
+              type: "url",
+              description:
+                "Paste a YouTube video URL (e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)",
+              validation: (rule) => rule.required(),
+            },
+          ],
+          preview: {
+            select: { url: "url" },
+            prepare({ url }) {
+              return {
+                title: "YouTube Video",
+                subtitle: url || "No URL set",
+              };
+            },
+          },
         },
       ],
     }),
