@@ -52,7 +52,7 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
 
       {/* Post header */}
       <section className="animate-fade-in space-y-3">
-        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight gradient-text leading-snug">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight gradient-text leading-snug">
           {post.title}
         </h1>
 
