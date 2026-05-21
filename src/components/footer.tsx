@@ -3,7 +3,7 @@ import { Separator } from "./ui/separator";
 import { PAGES, RESUME_URL } from "@/lib/constants";
 
 const LINKS = [
-  { label: "Linkedin", href: PAGES.linkedin },
+  { label: "LinkedIn", href: PAGES.linkedin },
   { label: "GitHub", href: PAGES.github },
   { label: "Twitter", href: PAGES.twitter },
   { label: "Instagram", href: PAGES.instagram },
