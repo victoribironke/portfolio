@@ -6,6 +6,8 @@ import { getProjects, getPosts } from "@/sanity/queries";
 import { ArrowUpRight, Mail } from "lucide-react";
 import Link from "next/link";
 
+export const revalidate = 43200;
+
 const Home = async () => {
   const [projects, posts] = await Promise.all([getProjects(), getPosts()]);
 
