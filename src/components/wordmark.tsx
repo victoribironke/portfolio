@@ -21,20 +21,22 @@ const GLYPHS = [
 
 type WordmarkProps = {
   className?: string;
+  style?: React.CSSProperties;
 };
 
-const Wordmark = ({ className }: WordmarkProps) => (
+const Wordmark = ({ className, style }: WordmarkProps) => (
   <svg
     viewBox="0 0 5379 684"
     role="img"
     aria-label={SITE.name}
     className={cn(
-      "block h-auto w-full overflow-visible fill-current",
+      "block h-auto w-full overflow-visible fill-current transition-colors duration-1000",
       className,
     )}
+    style={style}
   >
-    {GLYPHS.map((d) => (
-      <path key={d} d={d} />
+    {GLYPHS.map((d, i) => (
+      <path key={d} d={d} style={{ "--i": i } as React.CSSProperties} />
     ))}
   </svg>
 );

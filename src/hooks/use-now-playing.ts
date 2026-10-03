@@ -1,52 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import type { NowPlaying } from "@/lib/types";
+import { use, useEffect, useState } from "react";
+import { NowPlayingContext } from "@/components/now-playing-provider";
+import type { NowPlaying, TrackColor } from "@/lib/types";
 
-const POLL_INTERVAL = 60_000;
-
-const fetchNowPlaying = async (signal: AbortSignal) => {
-  try {
-    const res = await fetch("/api/now-playing", { signal });
-    const data: { track: NowPlaying } = await res.json();
-
-    return data.track;
-  } catch {
-    return null;
-  }
-};
-
-/** Polls the Spotify endpoint. `track` is `null` until the first response. */
-export const useNowPlaying = () => {
-  const [track, setTrack] = useState<NowPlaying | null>(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    const update = async () => {
-      const next = await fetchNowPlaying(controller.signal);
-
-      if (controller.signal.aborted) return;
-
-      // Re-stamp with the client clock so local progress isn't skewed.
-      setTrack(
-        next?.isPlaying
-          ? { ...next, updatedAt: Date.now() }
-          : { isPlaying: false },
-      );
-    };
-
-    update();
-    const id = setInterval(update, POLL_INTERVAL);
-
-    return () => {
-      controller.abort();
-      clearInterval(id);
-    };
-  }, []);
-
-  return track;
-};
+export const useNowPlaying = () => use(NowPlayingContext);
 
 /** Advances the track position locally between polls. */
 export const useTrackProgress = (track: NowPlaying | null) => {
@@ -67,3 +25,7 @@ export const useTrackProgress = (track: NowPlaying | null) => {
     track.durationMs,
   );
 };
+
+/** A light, legible tint of the album colour for use on dark backgrounds. */
+export const getTrackTint = (color: TrackColor) =>
+  `hsl(${color.hue} ${Math.max(color.saturation, 35)}% 72%)`;

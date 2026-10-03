@@ -17,7 +17,7 @@ const Blog = async () => {
 
   return (
     <>
-      <PageIntro title="Writing">
+      <PageIntro title="Writing" count={posts.length}>
         Notes, essays and things I&apos;ve learned along the way. Mostly about
         software, sometimes about everything else.
       </PageIntro>

@@ -17,7 +17,6 @@ export const PAGES = {
 };
 
 export const NAV = [
-  { label: "Index", href: PAGES.home },
   { label: "Projects", href: PAGES.projects },
   { label: "Writing", href: PAGES.blog },
   { label: "Interests", href: PAGES.interests },

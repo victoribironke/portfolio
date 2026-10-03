@@ -13,7 +13,6 @@ const NotFound = () => (
       </p>
     </div>
     <Wordmark className="animate-fade opacity-20" />
-    <div aria-hidden className="grain" />
   </main>
 );
 

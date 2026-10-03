@@ -65,34 +65,6 @@
       transform: scaleY(1);
     }
   }
-
-  @keyframes grain {
-    0%,
-    100% {
-      transform: translate3d(0, 0, 0);
-    }
-    12% {
-      transform: translate3d(-2%, 1.5%, 0);
-    }
-    24% {
-      transform: translate3d(1.5%, -2%, 0);
-    }
-    36% {
-      transform: translate3d(-1%, -1.5%, 0);
-    }
-    48% {
-      transform: translate3d(2%, 1%, 0);
-    }
-    60% {
-      transform: translate3d(-1.5%, 2%, 0);
-    }
-    72% {
-      transform: translate3d(1%, -1%, 0);
-    }
-    84% {
-      transform: translate3d(-2%, -0.5%, 0);
-    }
-  }
 }
 
 /* ─── Base ─── */
@@ -170,22 +142,11 @@
 
   &:hover::after,
   &:focus-visible::after,
-  &[aria-current="page"]::after {
+  &[aria-current="page"]::after,
+  &[data-active]::after {
     transform: scaleX(1);
     transform-origin: left;
   }
-}
-
-/* Faint film grain that boils in place over everything. */
-@utility grain {
-  position: fixed;
-  inset: -15%;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0.05;
-  background-size: 200px 200px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 0.7s steps(1) infinite;
 }
 
 /* Condensed display type, matching the wordmark. */
@@ -205,4 +166,24 @@
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+/* Wordmark letters pulse like equalizer bars while music is playing. */
+@utility wordmark-live {
+  & path {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: equalize-letter 1.4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * -0.37s);
+  }
+}
+
+@keyframes equalize-letter {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.9);
+  }
 }

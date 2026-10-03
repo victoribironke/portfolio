@@ -26,3 +26,15 @@ export type TrackColor = {
   hue: number;
   saturation: number;
 };
+
+export type ChessGame = {
+  url: string;
+  /** Final position. */
+  fen: string;
+  endedAt: number;
+  timeClass: string;
+  color: "white" | "black";
+  result: "win" | "loss" | "draw";
+  rating: number;
+  opponent: { username: string; rating: number };
+};

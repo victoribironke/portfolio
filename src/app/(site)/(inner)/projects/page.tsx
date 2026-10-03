@@ -17,7 +17,7 @@ const Projects = async () => {
 
   return (
     <>
-      <PageIntro title="Projects">
+      <PageIntro title="Projects" count={projects.length}>
         Things I&apos;ve built, things I&apos;m building, and things I keep
         coming back to.
       </PageIntro>
