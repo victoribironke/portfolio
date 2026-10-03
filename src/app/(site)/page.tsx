@@ -56,7 +56,7 @@ const Home = async () => {
             <Link href={PAGES.interests} className="link-draw">
               things he&apos;s into
             </Link>
-            . The name below moves when he&apos;s listening to something.
+            .
           </p>
 
           {lastGame && (
