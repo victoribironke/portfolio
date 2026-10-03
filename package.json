@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
-    "check": "npm run lint && npm run type-check"
+    "check": "bun run lint && bun run type-check"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",

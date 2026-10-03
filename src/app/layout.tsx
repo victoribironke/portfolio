@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { IMAGES, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -28,15 +28,9 @@ export const metadata: Metadata = {
     url: SITE.url,
     siteName: SITE.name,
     type: "website",
-    images: [{ url: IMAGES.seo.home.src }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE.name,
-    description: SITE.description,
-    images: [{ url: IMAGES.seo.home.src }],
-    creator: SITE.twitter,
-  },
+  // Title, description and image are filled in from `openGraph` per page.
+  twitter: { card: "summary_large_image", creator: SITE.twitter },
   alternates: { canonical: "/" },
 };
 
