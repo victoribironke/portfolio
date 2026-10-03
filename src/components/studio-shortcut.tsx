@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { PAGES } from "@/lib/constants";
 
 const StudioShortcut = () => {
   const router = useRouter();
@@ -26,7 +27,7 @@ const StudioShortcut = () => {
 
         if (buffer.current.endsWith("studio")) {
           buffer.current = "";
-          router.push("/studio");
+          router.push(PAGES.studio);
         }
       }
     };

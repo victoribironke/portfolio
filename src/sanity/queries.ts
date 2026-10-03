@@ -1,3 +1,5 @@
+import type { PortableTextProps } from "@portabletext/react";
+import { defineQuery } from "next-sanity";
 import { client } from "./client";
 
 export type Project = {
@@ -5,7 +7,6 @@ export type Project = {
   name: string;
   description: string;
   link: string;
-  order: number;
 };
 
 export type PostSummary = {
@@ -15,49 +16,43 @@ export type PostSummary = {
   description: string;
   coverImage: string | null;
   publishedAt: string;
+  readingTime: number;
 };
 
 export type Post = PostSummary & {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  body: any[];
+  body: PortableTextProps["value"];
 };
 
-export const getProjects = async (): Promise<Project[]> => {
-  return client.fetch(
-    `*[_type == "project"] | order(order asc) {
-      _id,
-      name,
-      description,
-      link,
-      order
-    }`
-  );
-};
+const POST_SUMMARY_FIELDS = `
+  _id,
+  title,
+  "slug": slug.current,
+  description,
+  "coverImage": coverImage.asset->url,
+  publishedAt,
+  "readingTime": round(length(pt::text(body)) / 5 / 200)
+`;
 
-export const getPosts = async (): Promise<PostSummary[]> => {
-  return client.fetch(
-    `*[_type == "post" && visible == true] | order(publishedAt desc) {
-      _id,
-      title,
-      "slug": slug.current,
-      description,
-      "coverImage": coverImage.asset->url,
-      publishedAt
-    }`
-  );
-};
+const PROJECTS_QUERY = defineQuery(`
+  *[_type == "project"] | order(order asc) { _id, name, description, link }
+`);
 
-export const getPostBySlug = async (slug: string): Promise<Post | null> => {
-  return client.fetch(
-    `*[_type == "post" && slug.current == $slug][0] {
-      _id,
-      title,
-      "slug": slug.current,
-      description,
-      "coverImage": coverImage.asset->url,
-      publishedAt,
-      body
-    }`,
-    { slug }
-  );
-};
+const POSTS_QUERY = defineQuery(`
+  *[_type == "post" && visible == true] | order(publishedAt desc) {
+    ${POST_SUMMARY_FIELDS}
+  }
+`);
+
+const POST_QUERY = defineQuery(`
+  *[_type == "post" && slug.current == $slug][0] {
+    ${POST_SUMMARY_FIELDS},
+    body
+  }
+`);
+
+export const getProjects = () => client.fetch<Project[]>(PROJECTS_QUERY);
+
+export const getPosts = () => client.fetch<PostSummary[]>(POSTS_QUERY);
+
+export const getPostBySlug = (slug: string) =>
+  client.fetch<Post | null>(POST_QUERY, { slug });

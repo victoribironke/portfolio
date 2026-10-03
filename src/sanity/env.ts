@@ -1,14 +1,11 @@
 import { CREDENTIALS } from "@/lib/constants";
 
-const assertValue = <T>(v: T | undefined, errorMessage: string): T => {
-  if (v === undefined) {
-    throw new Error(errorMessage);
-  }
-  return v;
+const assertValue = <T>(value: T | undefined, errorMessage: string): T => {
+  if (value === undefined) throw new Error(errorMessage);
+  return value;
 };
 
-export const apiVersion =
-  process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2024-01-01";
+export const apiVersion = CREDENTIALS.sanity_api_version || "2025-01-01";
 
 export const dataset = assertValue(
   CREDENTIALS.sanity_dataset,
@@ -19,10 +16,3 @@ export const projectId = assertValue(
   CREDENTIALS.sanity_project_id,
   "Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID",
 );
-
-// function assertValue<T>(v: T | undefined, errorMessage: string): T {
-//   if (v === undefined) {
-//     throw new Error(errorMessage);
-//   }
-//   return v;
-// }
