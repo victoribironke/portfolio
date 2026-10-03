@@ -9,11 +9,11 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 
   return [
     { url: SITE.url, changeFrequency: "daily", priority: 1 },
-    {
-      url: `${SITE.url}${PAGES.blog}`,
-      changeFrequency: "weekly",
+    ...[PAGES.projects, PAGES.blog, PAGES.interests].map((page) => ({
+      url: `${SITE.url}${page}`,
+      changeFrequency: "weekly" as const,
       priority: 0.8,
-    },
+    })),
     ...posts.map((post) => ({
       url: `${SITE.url}${PAGES.post(post.slug)}`,
       lastModified: post.publishedAt,

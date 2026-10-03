@@ -1,7 +1,11 @@
-import SiteShell from "@/components/site-shell";
+import StudioShortcut from "@/components/studio-shortcut";
 
 const SiteLayout = ({ children }: LayoutProps<"/">) => (
-  <SiteShell>{children}</SiteShell>
+  <>
+    <StudioShortcut />
+    {children}
+    <div aria-hidden className="grain" />
+  </>
 );
 
 export default SiteLayout;

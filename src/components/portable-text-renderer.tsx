@@ -22,28 +22,26 @@ const getYouTubeId = (value: string) => {
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
-      <h2 className="mt-12 mb-4 font-serif text-3xl leading-tight tracking-tight">
+      <h2 className="mt-14 mb-5 display-type text-[clamp(2rem,4vw,3rem)]">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-10 mb-3 text-lg font-semibold tracking-tight">
+      <h3 className="mt-10 mb-3 text-xl font-medium tracking-[-0.015em]">
         {children}
       </h3>
     ),
-    h4: ({ children }) => (
-      <h4 className="mt-8 mb-2 font-semibold tracking-tight">{children}</h4>
-    ),
+    h4: ({ children }) => <h4 className="mt-8 mb-2 font-medium">{children}</h4>,
     normal: ({ children }) => <p className="my-5">{children}</p>,
     blockquote: ({ children }) => (
-      <blockquote className="my-8 border-l-2 border-accent pl-5 font-serif text-xl leading-snug text-ink italic">
+      <blockquote className="my-10 border-l border-fg pl-6 text-[clamp(1.3rem,2vw,1.75rem)] leading-snug tracking-[-0.01em] text-fg">
         {children}
       </blockquote>
     ),
   },
   marks: {
     strong: ({ children }) => (
-      <strong className="font-semibold text-ink">{children}</strong>
+      <strong className="font-medium text-fg">{children}</strong>
     ),
     em: ({ children }) => <em>{children}</em>,
     underline: ({ children }) => (
@@ -51,7 +49,7 @@ const components: PortableTextComponents = {
     ),
     "strike-through": ({ children }) => <s>{children}</s>,
     code: ({ children }) => (
-      <code className="rounded-md border bg-surface px-1.5 py-0.5 font-mono text-[0.85em] text-ink">
+      <code className="rounded-[3px] bg-line px-1.5 py-0.5 font-mono text-[0.85em] text-fg">
         {children}
       </code>
     ),
@@ -62,7 +60,7 @@ const components: PortableTextComponents = {
       return (
         <a
           href={href}
-          className="link text-ink"
+          className="text-fg underline decoration-line decoration-1 underline-offset-4 transition-colors hover:decoration-fg"
           {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
         >
           {children}
@@ -72,12 +70,12 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="my-5 list-disc space-y-2 pl-6 marker:text-faint">
+      <ul className="my-5 list-disc space-y-2 pl-6 marker:text-muted">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="my-5 list-decimal space-y-2 pl-6 marker:font-mono marker:text-sm marker:text-faint">
+      <ol className="my-5 list-decimal space-y-2 pl-6 marker:font-mono marker:text-sm marker:text-muted">
         {children}
       </ol>
     ),
@@ -97,11 +95,11 @@ const components: PortableTextComponents = {
             alt={value.alt ?? ""}
             width={1400}
             height={800}
-            sizes="(min-width: 768px) 672px, 100vw"
-            className="h-auto w-full rounded-xl border"
+            sizes="(min-width: 1024px) 40rem, 100vw"
+            className="h-auto w-full rounded-[3px]"
           />
           {value.caption && (
-            <figcaption className="mt-3 text-center text-sm text-faint">
+            <figcaption className="mt-3 text-sm text-muted">
               {value.caption}
             </figcaption>
           )}
@@ -109,14 +107,14 @@ const components: PortableTextComponents = {
       );
     },
     code: ({ value }) => (
-      <figure className="my-8 overflow-hidden rounded-xl border bg-surface">
+      <figure className="my-8 overflow-hidden rounded-[3px] bg-fg text-bg">
         {value.language && value.language !== "text" && (
-          <figcaption className="border-b px-4 py-2 font-mono text-[0.68rem] tracking-[0.14em] text-faint uppercase">
+          <figcaption className="border-b border-bg/15 px-4 py-2 font-mono text-[0.7rem] tracking-[0.09em] uppercase opacity-60">
             {value.language}
           </figcaption>
         )}
         <pre className="overflow-x-auto p-4 text-[0.85rem] leading-relaxed">
-          <code className="font-mono text-ink">{value.code}</code>
+          <code className="font-mono">{value.code}</code>
         </pre>
       </figure>
     ),
@@ -127,7 +125,7 @@ const components: PortableTextComponents = {
 
       return (
         <iframe
-          className="my-10 aspect-video w-full rounded-xl border"
+          className="my-10 aspect-video w-full rounded-[3px]"
           src={`https://www.youtube-nocookie.com/embed/${videoId}`}
           title="YouTube video"
           loading="lazy"
@@ -144,7 +142,7 @@ type PortableTextRendererProps = {
 };
 
 const PortableTextRenderer = ({ body }: PortableTextRendererProps) => (
-  <div className="text-[1.0625rem] leading-[1.8] text-ink/85">
+  <div className="text-[clamp(1.05rem,1.2vw,1.15rem)] leading-[1.7] text-fg/85">
     <PortableText value={body} components={components} />
   </div>
 );

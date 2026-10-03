@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { IMAGES, SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -12,11 +12,10 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-const instrumentSerif = Instrument_Serif({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  axes: ["wdth", "opsz"],
+  variable: "--font-bricolage",
 });
 
 export const metadata: Metadata = {
@@ -42,16 +41,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f6f5f1" },
-    { media: "(prefers-color-scheme: dark)", color: "#0e0e0d" },
-  ],
+  themeColor: "#070707",
 };
 
 const RootLayout = ({ children }: LayoutProps<"/">) => (
   <html
     lang="en"
-    className={cn(geist.variable, geistMono.variable, instrumentSerif.variable)}
+    className={cn(geist.variable, geistMono.variable, bricolage.variable)}
   >
     <body>
       {children}

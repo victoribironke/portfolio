@@ -9,10 +9,19 @@ export const SITE = {
 
 export const PAGES = {
   home: "/",
+  projects: "/projects",
   blog: "/blog",
+  interests: "/interests",
   post: (slug: string) => `/blog/${slug}`,
   studio: "/studio",
 };
+
+export const NAV = [
+  { label: "Index", href: PAGES.home },
+  { label: "Projects", href: PAGES.projects },
+  { label: "Writing", href: PAGES.blog },
+  { label: "Interests", href: PAGES.interests },
+];
 
 export const SOCIALS = [
   { label: "GitHub", href: "https://github.com/victoribironke" },

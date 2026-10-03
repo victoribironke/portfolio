@@ -1,34 +1,35 @@
-import { ArrowUpRight, ChessKnight } from "lucide-react";
 import { CHESS_PROFILE_URL, getChessRatings } from "@/lib/chess";
 import { CHESS_USERNAME } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import Card from "./card";
 
 type ChessRatingsProps = {
+  size?: "lg" | "sm";
   className?: string;
 };
 
-const ChessRatings = async ({ className }: ChessRatingsProps) => {
+const ChessRatings = async ({ size = "lg", className }: ChessRatingsProps) => {
   const ratings = await getChessRatings();
 
   return (
-    <Card
-      label="Chess"
-      icon={<ChessKnight size={13} strokeWidth={1.75} />}
-      className={className}
-    >
-      <dl className="flex flex-1 flex-col gap-2.5">
+    <div className={cn("flex flex-col gap-6", className)}>
+      <dl
+        className={cn(
+          "grid gap-x-[clamp(1rem,3vw,2.5rem)] gap-y-6",
+          size === "lg"
+            ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+            : "grid-cols-3 sm:grid-cols-5",
+        )}
+      >
         {ratings.map(({ label, rating }) => (
-          <div key={label} className="flex items-baseline gap-3 text-sm">
-            <dt className="text-muted">{label}</dt>
-            <span
-              aria-hidden
-              className="flex-1 translate-y-[-3px] border-b border-dotted"
-            />
+          <div key={label} className="flex flex-col gap-2">
+            <dt className="eyebrow">{label}</dt>
             <dd
               className={cn(
-                "font-serif text-xl leading-none tabular-nums",
-                rating === null && "text-faint",
+                "display-type tabular-nums",
+                size === "lg"
+                  ? "text-[clamp(3.5rem,8vw,7.5rem)]"
+                  : "text-[clamp(2rem,4vw,3rem)]",
+                rating === null && "text-muted",
               )}
             >
               {rating ?? "—"}
@@ -41,15 +42,11 @@ const ChessRatings = async ({ className }: ChessRatingsProps) => {
         href={CHESS_PROFILE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="group mt-5 inline-flex w-fit items-center gap-1 text-xs text-muted hover:text-ink"
+        className="w-fit text-sm link-muted"
       >
-        {CHESS_USERNAME} on chess.com
-        <ArrowUpRight
-          size={12}
-          className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-        />
+        {CHESS_USERNAME} on chess.com ↗
       </a>
-    </Card>
+    </div>
   );
 };
 

@@ -14,13 +14,14 @@ My corner of the internet: projects, writing, and a few live windows into what I
 ```
 src/
   app/
-    (site)/            # public pages, sharing the site shell (header + footer)
-      page.tsx         # home
-      blog/            # writing index and posts
+    (site)/
+      page.tsx         # home: dark poster with nav, live meta, bio and wordmark
+      (inner)/         # light pages under the wordmark: projects, blog, interests
     (studio)/studio/   # embedded Sanity Studio
     api/now-playing/   # Spotify "now playing" endpoint
     sitemap.ts, robots.ts, not-found.tsx
   components/          # kebab-case files, arrow-function components
+  hooks/               # client hooks (Spotify polling)
   lib/                 # constants, utils, and server-only data (chess, spotify, redis)
   sanity/              # client, queries, schema types
 ```
