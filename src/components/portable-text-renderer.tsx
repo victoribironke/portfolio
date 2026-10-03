@@ -1,77 +1,105 @@
-import { PortableText, type PortableTextComponents } from "@portabletext/react";
+import {
+  PortableText,
+  type PortableTextComponents,
+  type PortableTextProps,
+} from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "@/sanity/image";
+
+const getYouTubeId = (value: string) => {
+  try {
+    const url = new URL(value);
+
+    if (url.hostname.includes("youtu.be")) return url.pathname.slice(1);
+    if (url.hostname.includes("youtube.com")) return url.searchParams.get("v");
+  } catch {
+    // Invalid URLs render nothing.
+  }
+
+  return null;
+};
 
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
-      <h2 className="text-xl font-semibold mt-8 mb-4">{children}</h2>
+      <h2 className="mt-14 mb-5 display-type text-[clamp(2rem,4vw,3rem)]">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-lg font-semibold mt-6 mb-3">{children}</h3>
+      <h3 className="mt-10 mb-3 text-xl font-medium tracking-[-0.015em]">
+        {children}
+      </h3>
     ),
-    h4: ({ children }) => (
-      <h4 className="text-base font-semibold mt-4 mb-2">{children}</h4>
-    ),
-    normal: ({ children }) => (
-      <p className="leading-relaxed mb-4 text-base">{children}</p>
-    ),
+    h4: ({ children }) => <h4 className="mt-8 mb-2 font-medium">{children}</h4>,
+    normal: ({ children }) => <p className="my-5">{children}</p>,
     blockquote: ({ children }) => (
-      <blockquote className="border-l-2 border-muted-foreground/30 pl-4 italic text-muted-foreground my-4">
+      <blockquote className="my-10 border-l border-fg pl-6 text-[clamp(1.3rem,2vw,1.75rem)] leading-snug tracking-[-0.01em] text-fg">
         {children}
       </blockquote>
     ),
   },
   marks: {
     strong: ({ children }) => (
-      <strong className="font-semibold">{children}</strong>
+      <strong className="font-medium text-fg">{children}</strong>
     ),
     em: ({ children }) => <em>{children}</em>,
-    underline: ({ children }) => <u>{children}</u>,
+    underline: ({ children }) => (
+      <span className="underline underline-offset-4">{children}</span>
+    ),
     "strike-through": ({ children }) => <s>{children}</s>,
     code: ({ children }) => (
-      <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono">
+      <code className="rounded-[3px] bg-line px-1.5 py-0.5 font-mono text-[0.85em] text-fg">
         {children}
       </code>
     ),
-    link: ({ children, value }) => (
-      <a
-        href={value?.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }) => {
+      const href: string = value?.href ?? "#";
+      const isExternal = /^https?:\/\//.test(href);
+
+      return (
+        <a
+          href={href}
+          className="text-fg underline decoration-line decoration-1 underline-offset-4 transition-colors hover:decoration-fg"
+          {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+        >
+          {children}
+        </a>
+      );
+    },
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc pl-6 mb-4 space-y-1">{children}</ul>
+      <ul className="my-5 list-disc space-y-2 pl-6 marker:text-muted">
+        {children}
+      </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal pl-6 mb-4 space-y-1">{children}</ol>
+      <ol className="my-5 list-decimal space-y-2 pl-6 marker:font-mono marker:text-sm marker:text-muted">
+        {children}
+      </ol>
     ),
   },
   listItem: {
-    bullet: ({ children }) => <li className="leading-relaxed">{children}</li>,
-    number: ({ children }) => <li className="leading-relaxed">{children}</li>,
+    bullet: ({ children }) => <li className="pl-1">{children}</li>,
+    number: ({ children }) => <li className="pl-1">{children}</li>,
   },
   types: {
     image: ({ value }) => {
       if (!value?.asset) return null;
 
       return (
-        <figure className="my-6">
+        <figure className="my-10">
           <Image
-            src={urlFor(value).width(800).url()}
-            alt={value.alt || ""}
-            width={800}
-            height={450}
-            className="rounded-lg w-full h-auto"
+            src={urlFor(value).width(1400).fit("max").auto("format").url()}
+            alt={value.alt ?? ""}
+            width={1400}
+            height={800}
+            sizes="(min-width: 1024px) 40rem, 100vw"
+            className="h-auto w-full rounded-[3px]"
           />
           {value.caption && (
-            <figcaption className="text-sm text-muted-foreground text-center mt-2">
+            <figcaption className="mt-3 text-sm text-muted">
               {value.caption}
             </figcaption>
           )}
@@ -79,54 +107,44 @@ const components: PortableTextComponents = {
       );
     },
     code: ({ value }) => (
-      <pre className="bg-[#0d1117] rounded-lg p-4 overflow-x-auto my-4">
-        <code
-          className={`text-sm font-mono language-${value.language || "text"}`}
-        >
-          {value.code}
-        </code>
-      </pre>
+      <figure className="my-8 overflow-hidden rounded-[3px] bg-fg text-bg">
+        {value.language && value.language !== "text" && (
+          <figcaption className="border-b border-bg/15 px-4 py-2 font-mono text-[0.7rem] tracking-[0.09em] uppercase opacity-60">
+            {value.language}
+          </figcaption>
+        )}
+        <pre className="overflow-x-auto p-4 text-[0.85rem] leading-relaxed">
+          <code className="font-mono">{value.code}</code>
+        </pre>
+      </figure>
     ),
     youtube: ({ value }) => {
-      if (!value?.url) return null;
-
-      // Extract video ID from various YouTube URL formats
-      let videoId: string | null = null;
-      try {
-        const url = new URL(value.url);
-        if (url.hostname.includes("youtube.com")) {
-          videoId = url.searchParams.get("v");
-        } else if (url.hostname.includes("youtu.be")) {
-          videoId = url.pathname.slice(1);
-        }
-      } catch {
-        return null;
-      }
+      const videoId = value?.url ? getYouTubeId(value.url) : null;
 
       if (!videoId) return null;
 
       return (
-        <div className="my-6">
-          <iframe
-            className="w-full rounded-lg"
-            style={{ aspectRatio: "16 / 9" }}
-            src={`https://www.youtube.com/embed/${videoId}`}
-            title="YouTube video"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
+        <iframe
+          className="my-10 aspect-video w-full rounded-[3px]"
+          src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+          title="YouTube video"
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       );
     },
   },
 };
 
-const PortableTextRenderer = ({ body }: { body: any[] }) => {
-  return (
-    <div className="markdown">
-      <PortableText value={body} components={components} />
-    </div>
-  );
+type PortableTextRendererProps = {
+  body: PortableTextProps["value"];
 };
+
+const PortableTextRenderer = ({ body }: PortableTextRendererProps) => (
+  <div className="text-[clamp(1.05rem,1.2vw,1.15rem)] leading-[1.7] text-fg/85">
+    <PortableText value={body} components={components} />
+  </div>
+);
 
 export default PortableTextRenderer;
