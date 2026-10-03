@@ -31,12 +31,6 @@ export const SOCIALS = [
 
 export const CHESS_USERNAME = "boy_victor";
 
-export const IMAGES = {
-  seo: {
-    home: { src: "/open-graph-images/home.png", w: 1280, h: 720 },
-  },
-};
-
 export const CREDENTIALS = {
   sanity_project_id: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   sanity_dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,

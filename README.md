@@ -19,7 +19,9 @@ src/
       (inner)/         # light pages under the wordmark: projects, blog, interests
     (studio)/studio/   # embedded Sanity Studio
     api/now-playing/   # Spotify "now playing" endpoint
+    opengraph-image.tsx  # generated OG images (one per section and post too)
     sitemap.ts, robots.ts, not-found.tsx
+  assets/fonts/        # static font instances for OG image rendering
   components/          # kebab-case files, arrow-function components
   hooks/               # client hooks (Spotify polling)
   lib/                 # constants, utils, and server-only data (chess, spotify, redis)
@@ -29,8 +31,8 @@ src/
 ## Getting started
 
 ```bash
-npm install
-npm run dev
+bun install
+bun dev
 ```
 
 Environment variables (`.env.local`):
@@ -51,9 +53,9 @@ SPOTIFY_CLIENT_SECRET=
 
 | Script               | What it does                  |
 | -------------------- | ----------------------------- |
-| `npm run dev`        | Start the dev server          |
-| `npm run build`      | Production build              |
-| `npm run lint`       | ESLint                        |
-| `npm run type-check` | TypeScript                    |
-| `npm run format`     | Prettier (with class sorting) |
-| `npm run check`      | Lint + type-check             |
+| `bun run dev`        | Start the dev server          |
+| `bun run build`      | Production build              |
+| `bun run lint`       | ESLint                        |
+| `bun run type-check` | TypeScript                    |
+| `bun run format`     | Prettier (with class sorting) |
+| `bun run check`      | Lint + type-check             |

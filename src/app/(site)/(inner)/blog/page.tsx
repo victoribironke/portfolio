@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import IndexList from "@/components/index-list";
 import PageIntro from "@/components/page-intro";
-import { PAGES } from "@/lib/constants";
+import { PAGES, SITE } from "@/lib/constants";
 import { getPosts } from "@/sanity/queries";
 
 export const revalidate = 43200;
@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   title: "Writing",
   description: "Notes, essays and things Victor has learned along the way.",
   alternates: { canonical: PAGES.blog },
+  openGraph: {
+    title: `Writing · ${SITE.name}`,
+    url: PAGES.blog,
+    siteName: SITE.name,
+  },
 };
 
 const Blog = async () => {

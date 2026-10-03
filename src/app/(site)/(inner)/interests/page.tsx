@@ -4,7 +4,7 @@ import LastGame from "@/components/last-game";
 import NowPlaying from "@/components/now-playing";
 import PageIntro from "@/components/page-intro";
 import { getRecentGames } from "@/lib/chess";
-import { PAGES } from "@/lib/constants";
+import { PAGES, SITE } from "@/lib/constants";
 
 export const revalidate = 43200;
 
@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Interests",
   description: "What Victor is listening to, and how his chess is going.",
   alternates: { canonical: PAGES.interests },
+  openGraph: {
+    title: `Interests · ${SITE.name}`,
+    url: PAGES.interests,
+    siteName: SITE.name,
+  },
 };
 
 const Interests = async () => {

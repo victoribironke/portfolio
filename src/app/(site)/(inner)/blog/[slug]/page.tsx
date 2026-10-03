@@ -27,8 +27,6 @@ export const generateMetadata = async ({
 
   if (!post) return {};
 
-  const images = post.coverImage ? [{ url: post.coverImage }] : undefined;
-
   return {
     title: post.title,
     description: post.description,
@@ -40,15 +38,8 @@ export const generateMetadata = async ({
       publishedTime: post.publishedAt,
       authors: [SITE.name],
       url: PAGES.post(slug),
-      images,
     },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description,
-      images,
-      creator: SITE.twitter,
-    },
+    twitter: { card: "summary_large_image", creator: SITE.twitter },
   };
 };
 
