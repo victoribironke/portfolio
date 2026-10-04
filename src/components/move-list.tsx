@@ -8,24 +8,16 @@ import { cn } from "@/lib/utils";
 const ITEMS = [...NAV, { label: "Contact", href: `mailto:${SITE.email}` }];
 
 type MoveListProps = {
-  direction?: "row" | "column";
   className?: string;
 };
 
 /** Primary nav, numbered like moves in a game score: 1. Projects 2. Writing… */
-const MoveList = ({ direction = "column", className }: MoveListProps) => {
+const MoveList = ({ className }: MoveListProps) => {
   const pathname = usePathname();
 
   return (
     <nav aria-label="Primary" className={className}>
-      <ol
-        className={cn(
-          "flex",
-          direction === "column"
-            ? "flex-col"
-            : "flex-wrap gap-x-[clamp(1rem,2.5vw,2.25rem)] gap-y-1",
-        )}
-      >
+      <ol className="flex flex-wrap gap-x-[clamp(0.8rem,2.5vw,2.25rem)] gap-y-1">
         {ITEMS.map(({ label, href }, i) => {
           const isActive = pathname.startsWith(href);
 
@@ -34,7 +26,7 @@ const MoveList = ({ direction = "column", className }: MoveListProps) => {
               <Link
                 href={href}
                 aria-current={isActive ? "page" : undefined}
-                className="group inline-flex items-baseline gap-[0.6em]"
+                className="group inline-flex items-baseline gap-[0.45em] sm:gap-[0.6em]"
               >
                 <span className="font-mono text-[0.78em] text-muted tabular-nums">
                   {i + 1}.

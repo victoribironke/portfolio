@@ -17,7 +17,7 @@ const InnerLayout = ({ children }: LayoutProps<"/">) => (
       >
         <Wordmark />
       </Link>
-      <MoveList direction="row" />
+      <MoveList />
     </header>
 
     <main className="flex-1 animate-rise pt-[clamp(2rem,6vw,5rem)] pb-24">

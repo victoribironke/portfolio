@@ -60,7 +60,7 @@ const Home = async () => {
           </p>
 
           {lastGame && (
-            <div className="flex w-[clamp(8rem,13vw,12rem)] flex-col gap-2">
+            <div className="flex w-[clamp(10rem,13vw,12rem)] flex-col gap-2">
               <span className="eyebrow">Last game</span>
               <LastGame game={lastGame} size="sm" />
               {rated.length > 0 && (

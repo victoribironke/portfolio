@@ -96,7 +96,7 @@ export const renderPosterImage = () => {
     <Frame theme="dark">
       <div style={{ display: "flex", flexDirection: "column", gap: 44 }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <div style={{ display: "flex", gap: 32 }}>
             {NAV.map((item, i) => (
               <span key={item} style={{ display: "flex", gap: 12 }}>
                 <span style={{ color: muted }}>{i + 1}.</span>
